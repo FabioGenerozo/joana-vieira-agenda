@@ -10,7 +10,7 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
 }
 
 body{
@@ -28,7 +28,10 @@ button{
   min-height:100vh;
 }
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
+
 .sidebar{
   width:230px;
   background:#5b4030;
@@ -81,7 +84,10 @@ button{
   background:#7a5842;
 }
 
-/* CONTEÚDO */
+/* =========================
+   CONTEÚDO
+========================= */
+
 .content{
   flex:1;
   padding:25px;
@@ -103,6 +109,7 @@ button{
   justify-content:space-between;
   align-items:center;
   margin-bottom:25px;
+  gap:15px;
 }
 
 .header h1{
@@ -113,6 +120,10 @@ button{
   color:#8a7566;
   margin-top:5px;
 }
+
+/* =========================
+   BOTÕES
+========================= */
 
 .btn{
   background:#6b4a36;
@@ -139,7 +150,25 @@ button{
   background:#5c8a68;
 }
 
-/* CARDS */
+.btn-edit{
+  background:#e3d2c4;
+  color:#5b4030;
+}
+
+.btn-cancel{
+  background:#f0c8c7;
+  color:#8d302e;
+}
+
+.btn-delete{
+  background:#ead5d5;
+  color:#9b3030;
+}
+
+/* =========================
+   CARDS
+========================= */
+
 .cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -163,7 +192,10 @@ button{
   font-size:28px;
 }
 
-/* TABELAS/LISTAS */
+/* =========================
+   SEÇÕES
+========================= */
+
 .section{
   background:white;
   border-radius:15px;
@@ -178,6 +210,10 @@ button{
   align-items:center;
   margin-bottom:15px;
 }
+
+/* =========================
+   ITENS
+========================= */
 
 .item{
   border-bottom:1px solid #eee;
@@ -216,17 +252,10 @@ button{
   font-weight:bold;
 }
 
-.btn-cancel{
-  background:#f0c8c7;
-  color:#8d302e;
-}
+/* =========================
+   STATUS
+========================= */
 
-.btn-delete{
-  background:#ead5d5;
-  color:#9b3030;
-}
-
-/* STATUS */
 .status{
   display:inline-block;
   padding:5px 9px;
@@ -250,12 +279,10 @@ button{
   color:#9b3636;
 }
 
-.status-Cancelado{
-  background:#ddd;
-  color:#555;
-}
+/* =========================
+   BUSCA
+========================= */
 
-/* BUSCA */
 .search{
   width:100%;
   padding:12px;
@@ -264,7 +291,10 @@ button{
   margin-bottom:15px;
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
+
 #modal{
   position:fixed;
   inset:0;
@@ -319,8 +349,12 @@ button{
   margin-top:20px;
 }
 
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVO
+========================= */
+
 @media(max-width:800px){
+
   .app{
     display:block;
   }
@@ -376,7 +410,6 @@ button{
 
   .header{
     align-items:flex-start;
-    gap:10px;
   }
 
   .header h1{
@@ -395,6 +428,7 @@ button{
 }
 
 @media(max-width:450px){
+
   .cards{
     grid-template-columns:1fr 1fr;
   }
@@ -406,6 +440,14 @@ button{
   .card h2{
     font-size:23px;
   }
+
+  .header{
+    flex-direction:column;
+  }
+
+  .header .btn{
+    width:100%;
+  }
 }
 </style>
 </head>
@@ -414,42 +456,83 @@ button{
 
 <div class="app">
 
+  <!-- =========================
+       MENU
+  ========================= -->
+
   <aside class="sidebar">
 
     <div class="logo">
-      <div class="logo-circle">JV</div>
+
+      <div class="logo-circle">
+        JV
+      </div>
+
       <div>
         <h2>Joana Vieira</h2>
         <p>Agenda</p>
       </div>
+
     </div>
 
     <div class="nav">
-      <button class="active" data-page="home">🏠 Início</button>
-      <button data-page="agenda">📅 Agenda</button>
-      <button data-page="clients">👩 Clientes</button>
-      <button data-page="presence">✅ Presença</button>
-      <button data-page="finance">💰 Financeiro</button>
-      <button data-page="services">💅 Serviços</button>
+
+      <button class="active" data-page="home">
+        🏠 Início
+      </button>
+
+      <button data-page="agenda">
+        📅 Agenda
+      </button>
+
+      <button data-page="clients">
+        👩 Clientes
+      </button>
+
+      <button data-page="presence">
+        ✅ Presença
+      </button>
+
+      <button data-page="finance">
+        💰 Financeiro
+      </button>
+
+      <button data-page="services">
+        💅 Serviços
+      </button>
+
     </div>
 
   </aside>
 
+
   <main class="content">
 
-    <!-- INÍCIO -->
+    <!-- =========================
+         INÍCIO
+    ========================= -->
+
     <section id="home" class="page">
 
       <div class="header">
+
         <div>
           <h1>Olá, Joana! 👋</h1>
-          <p class="subtitle">Resumo da sua agenda</p>
+          <p class="subtitle">
+            Resumo da sua agenda
+          </p>
         </div>
 
-        <button class="btn" onclick="openModal('appointment')">
+        <button
+          class="btn"
+          onclick="openModal('appointment')">
+
           + Agendamento
+
         </button>
+
       </div>
+
 
       <div class="cards">
 
@@ -475,51 +558,80 @@ button{
 
       </div>
 
+
       <div class="section">
+
         <div class="section-title">
-          <h3>Próximos atendimentos</h3>
+          <h3>Atendimentos de hoje</h3>
         </div>
 
         <div id="homeAppointments"></div>
+
       </div>
 
     </section>
 
 
-    <!-- AGENDA -->
+    <!-- =========================
+         AGENDA
+    ========================= -->
+
     <section id="agenda" class="page hidden">
 
       <div class="header">
+
         <div>
           <h1>Agenda</h1>
-          <p class="subtitle">Seus agendamentos</p>
+          <p class="subtitle">
+            Seus agendamentos
+          </p>
         </div>
 
-        <button class="btn" onclick="openModal('appointment')">
+        <button
+          class="btn"
+          onclick="openModal('appointment')">
+
           + Agendamento
+
         </button>
+
       </div>
 
+
       <div class="section">
+
         <div id="agendaList"></div>
+
       </div>
 
     </section>
 
 
-    <!-- CLIENTES -->
+    <!-- =========================
+         CLIENTES
+    ========================= -->
+
     <section id="clients" class="page hidden">
 
       <div class="header">
+
         <div>
           <h1>Clientes</h1>
-          <p class="subtitle">Cadastro de clientes</p>
+          <p class="subtitle">
+            Cadastro de clientes
+          </p>
         </div>
 
-        <button class="btn" onclick="openModal('client')">
+        <button
+          class="btn"
+          onclick="openModal('client')">
+
           + Cliente
+
         </button>
+
       </div>
+
 
       <div class="section">
 
@@ -536,70 +648,123 @@ button{
     </section>
 
 
-    <!-- PRESENÇA -->
+    <!-- =========================
+         PRESENÇA
+    ========================= -->
+
     <section id="presence" class="page hidden">
 
       <div class="header">
+
         <div>
           <h1>Presença</h1>
-          <p class="subtitle">Controle de presença dos atendimentos</p>
+
+          <p class="subtitle">
+            Controle de presença
+          </p>
         </div>
+
       </div>
 
+
       <div class="section">
+
         <div id="presenceList"></div>
+
       </div>
 
     </section>
 
 
-    <!-- FINANCEIRO -->
+    <!-- =========================
+         FINANCEIRO
+    ========================= -->
+
     <section id="finance" class="page hidden">
 
       <div class="header">
+
         <div>
           <h1>Financeiro</h1>
-          <p class="subtitle">Resumo dos atendimentos realizados</p>
+
+          <p class="subtitle">
+            Resumo dos atendimentos realizados
+          </p>
         </div>
+
       </div>
+
 
       <div class="cards">
 
         <div class="card">
-          <small>Atendimentos realizados</small>
-          <h2 id="financeCount">0</h2>
+
+          <small>
+            Atendimentos realizados
+          </small>
+
+          <h2 id="financeCount">
+            0
+          </h2>
+
         </div>
 
+
         <div class="card">
-          <small>Faturamento</small>
-          <h2 id="financeRevenue">R$ 0,00</h2>
+
+          <small>
+            Faturamento
+          </small>
+
+          <h2 id="financeRevenue">
+            R$ 0,00
+          </h2>
+
         </div>
 
       </div>
 
+
       <div class="section">
+
         <div id="financeList"></div>
+
       </div>
 
     </section>
 
 
-    <!-- SERVIÇOS -->
+    <!-- =========================
+         SERVIÇOS
+    ========================= -->
+
     <section id="services" class="page hidden">
 
       <div class="header">
+
         <div>
           <h1>Serviços</h1>
-          <p class="subtitle">Serviços e valores</p>
+
+          <p class="subtitle">
+            Serviços e valores
+          </p>
         </div>
 
-        <button class="btn" onclick="openModal('service')">
+        <button
+          class="btn"
+          onclick="openModal('service')">
+
           + Serviço
+
         </button>
+
       </div>
 
+
       <div class="section">
+
         <div id="servicesList"></div>
+
       </div>
 
     </section>
@@ -609,12 +774,17 @@ button{
 </div>
 
 
-<!-- MODAL -->
+<!-- =========================
+     MODAL
+========================= -->
+
 <div id="modal">
 
   <div class="modal-box">
 
-    <h2 id="modalTitle">Novo cadastro</h2>
+    <h2 id="modalTitle">
+      Novo cadastro
+    </h2>
 
     <div id="modalContent"></div>
 
@@ -626,82 +796,100 @@ button{
 <script>
 
 /* =========================
-   DADOS
+   CONFIGURAÇÃO
 ========================= */
 
 const STORAGE_KEY = "jvAgenda";
-
-const defaultData = {
-  clients: [
-    {
-      id: 1,
-      name: "Maria Silva",
-      phone: "(11) 99999-1111"
-    },
-    {
-      id: 2,
-      name: "Juliana Costa",
-      phone: "(11) 98888-2222"
-    }
-  ],
-
-  services: [
-    {
-      id: 1,
-      name: "Mão",
-      price: 25
-    },
-    {
-      id: 2,
-      name: "Pé",
-      price: 25
-    },
-    {
-      id: 3,
-      name: "Mão e pé",
-      price: 50
-    }
-  ],
-
-  appointments: [
-    {
-      id: 1,
-      clientId: 1,
-      serviceId: 1,
-      date: today(),
-      time: "09:00",
-      status: "Presente"
-    },
-    {
-      id: 2,
-      clientId: 2,
-      serviceId: 3,
-      date: today(),
-      time: "10:00",
-      status: "Aguardando"
-    }
-  ]
-};
-
 
 let data;
 
 
 /* =========================
-   INICIALIZAÇÃO
+   DATA PADRÃO
+========================= */
+
+const defaultData = {
+
+  clients:[
+    {
+      id:1,
+      name:"Maria Silva",
+      phone:"(11) 99999-1111"
+    },
+
+    {
+      id:2,
+      name:"Juliana Costa",
+      phone:"(11) 98888-2222"
+    }
+  ],
+
+
+  services:[
+    {
+      id:1,
+      name:"Mão",
+      price:25
+    },
+
+    {
+      id:2,
+      name:"Pé",
+      price:25
+    },
+
+    {
+      id:3,
+      name:"Mão e pé",
+      price:50
+    }
+  ],
+
+
+  appointments:[
+    {
+      id:1,
+      clientId:1,
+      serviceId:1,
+      date:today(),
+      time:"09:00",
+      status:"Presente"
+    },
+
+    {
+      id:2,
+      clientId:2,
+      serviceId:3,
+      date:today(),
+      time:"10:00",
+      status:"Aguardando"
+    }
+  ]
+
+};
+
+
+/* =========================
+   CARREGAR DADOS
 ========================= */
 
 function loadData(){
 
   try{
 
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved =
+      localStorage.getItem(STORAGE_KEY);
 
     if(saved){
+
       data = JSON.parse(saved);
+
     }else{
+
       data = defaultData;
+
       save();
+
     }
 
   }catch(error){
@@ -709,6 +897,7 @@ function loadData(){
     console.error(error);
 
     data = defaultData;
+
     save();
 
   }
@@ -716,25 +905,40 @@ function loadData(){
 }
 
 
+/* =========================
+   SALVAR
+========================= */
+
 function save(){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(data)
+  );
+
 }
 
 
 /* =========================
-   DATA
+   DATA ATUAL
 ========================= */
 
 function today(){
 
   const d = new Date();
 
-  return d.getFullYear() + "-" +
-    String(d.getMonth()+1).padStart(2,"0") + "-" +
+  return d.getFullYear() +
+    "-" +
+    String(d.getMonth()+1).padStart(2,"0") +
+    "-" +
     String(d.getDate()).padStart(2,"0");
 
 }
 
+
+/* =========================
+   FORMATAR DATA
+========================= */
 
 function formatDate(date){
 
@@ -742,10 +946,18 @@ function formatDate(date){
 
   const parts = date.split("-");
 
-  return parts[2] + "/" + parts[1] + "/" + parts[0];
+  return parts[2] +
+    "/" +
+    parts[1] +
+    "/" +
+    parts[0];
 
 }
 
+
+/* =========================
+   DINHEIRO
+========================= */
 
 function money(value){
 
@@ -761,19 +973,29 @@ function money(value){
 
 
 /* =========================
-   BUSCAR DADOS
+   BUSCAR CLIENTE
 ========================= */
 
 function getClient(id){
 
-  return data.clients.find(c => Number(c.id) === Number(id));
+  return data.clients.find(
+    client =>
+      Number(client.id) === Number(id)
+  );
 
 }
 
 
+/* =========================
+   BUSCAR SERVIÇO
+========================= */
+
 function getService(id){
 
-  return data.services.find(s => Number(s.id) === Number(id));
+  return data.services.find(
+    service =>
+      Number(service.id) === Number(id)
+  );
 
 }
 
@@ -782,29 +1004,50 @@ function getService(id){
    NAVEGAÇÃO
 ========================= */
 
-document.querySelectorAll(".nav button").forEach(button => {
+document
+.querySelectorAll(".nav button")
+.forEach(button => {
 
-  button.addEventListener("click", function(){
+  button.addEventListener(
+    "click",
+    function(){
 
-    const page = this.dataset.page;
+      const page =
+        this.dataset.page;
 
-    document.querySelectorAll(".nav button")
-      .forEach(item => item.classList.remove("active"));
 
-    this.classList.add("active");
+      document
+      .querySelectorAll(".nav button")
+      .forEach(item =>
+        item.classList.remove("active")
+      );
 
-    document.querySelectorAll(".page")
-      .forEach(section => section.classList.add("hidden"));
 
-    const selected = document.getElementById(page);
+      this.classList.add("active");
 
-    if(selected){
-      selected.classList.remove("hidden");
+
+      document
+      .querySelectorAll(".page")
+      .forEach(section =>
+        section.classList.add("hidden")
+      );
+
+
+      const selected =
+        document.getElementById(page);
+
+
+      if(selected){
+
+        selected.classList.remove("hidden");
+
+      }
+
+
+      renderAll();
+
     }
-
-    renderAll();
-
-  });
+  );
 
 });
 
@@ -813,69 +1056,136 @@ document.querySelectorAll(".nav button").forEach(button => {
    MODAL
 ========================= */
 
-function openModal(type){
+function openModal(type, appointmentId=null){
 
-  const modal = document.getElementById("modal");
-  const title = document.getElementById("modalTitle");
-  const content = document.getElementById("modalContent");
+  const modal =
+    document.getElementById("modal");
+
+  const title =
+    document.getElementById("modalTitle");
+
+  const content =
+    document.getElementById("modalContent");
+
 
   modal.classList.add("show");
 
+
+  /* CLIENTE */
+
   if(type === "client"){
 
-    title.textContent = "Novo cliente";
+    title.textContent =
+      "Novo cliente";
+
 
     content.innerHTML = `
 
       <div class="form-group">
+
         <label>Nome</label>
-        <input id="clientName" placeholder="Nome da cliente">
+
+        <input
+          id="clientName"
+          placeholder="Nome da cliente"
+        >
+
       </div>
+
 
       <div class="form-group">
+
         <label>Telefone</label>
-        <input id="clientPhone" placeholder="Telefone">
+
+        <input
+          id="clientPhone"
+          placeholder="Telefone"
+        >
+
       </div>
 
+
       <div class="modal-actions">
-        <button class="btn btn-secondary" onclick="closeModal()">
+
+        <button
+          class="btn btn-secondary"
+          onclick="closeModal()">
+
           Cancelar
+
         </button>
 
-        <button class="btn" onclick="addClient()">
+
+        <button
+          class="btn"
+          onclick="addClient()">
+
           Salvar
+
         </button>
+
       </div>
 
     `;
 
   }
 
+
+  /* SERVIÇO */
 
   if(type === "service"){
 
-    title.textContent = "Novo serviço";
+    title.textContent =
+      "Novo serviço";
+
 
     content.innerHTML = `
 
       <div class="form-group">
+
         <label>Nome do serviço</label>
-        <input id="serviceName" placeholder="Ex.: Alongamento">
+
+        <input
+          id="serviceName"
+          placeholder="Ex.: Alongamento"
+        >
+
       </div>
+
 
       <div class="form-group">
+
         <label>Valor</label>
-        <input id="servicePrice" type="number" step="0.01" placeholder="0,00">
+
+        <input
+          id="servicePrice"
+          type="number"
+          step="0.01"
+          placeholder="0,00"
+        >
+
       </div>
 
+
       <div class="modal-actions">
-        <button class="btn btn-secondary" onclick="closeModal()">
+
+        <button
+          class="btn btn-secondary"
+          onclick="closeModal()">
+
           Cancelar
+
         </button>
 
-        <button class="btn" onclick="addService()">
+
+        <button
+          class="btn"
+          onclick="addService()">
+
           Salvar
+
         </button>
+
       </div>
 
     `;
@@ -883,44 +1193,95 @@ function openModal(type){
   }
 
 
+  /* AGENDAMENTO */
+
   if(type === "appointment"){
 
-    title.textContent = "Novo agendamento";
+    const editing =
+      appointmentId !== null;
 
-    let clientOptions = data.clients.map(client => {
 
-      return `
-        <option value="${client.id}">
+    const appointment =
+      editing
+      ? data.appointments.find(
+          a =>
+            Number(a.id) ===
+            Number(appointmentId)
+        )
+      : null;
+
+
+    title.textContent =
+      editing
+      ? "Editar agendamento"
+      : "Novo agendamento";
+
+
+    let clientOptions =
+      data.clients.map(client => `
+
+        <option
+          value="${client.id}"
+          ${appointment &&
+            Number(appointment.clientId) ===
+            Number(client.id)
+            ? "selected"
+            : ""
+          }>
+
           ${escapeHtml(client.name)}
+
         </option>
-      `;
 
-    }).join("");
+      `).join("");
 
-    let serviceOptions = data.services.map(service => {
 
-      return `
-        <option value="${service.id}">
-          ${escapeHtml(service.name)} - ${money(service.price)}
+    let serviceOptions =
+      data.services.map(service => `
+
+        <option
+          value="${service.id}"
+          ${appointment &&
+            Number(appointment.serviceId) ===
+            Number(service.id)
+            ? "selected"
+            : ""
+          }>
+
+          ${escapeHtml(service.name)}
+          - ${money(service.price)}
+
         </option>
-      `;
 
-    }).join("");
+      `).join("");
 
 
-    if(!data.clients.length || !data.services.length){
+    if(
+      !data.clients.length ||
+      !data.services.length
+    ){
 
       content.innerHTML = `
 
         <p style="margin-bottom:20px">
-          Para criar um agendamento, cadastre pelo menos
-          um cliente e um serviço.
+
+          Para criar um agendamento,
+          cadastre pelo menos um cliente
+          e um serviço.
+
         </p>
 
+
         <div class="modal-actions">
-          <button class="btn" onclick="closeModal()">
+
+          <button
+            class="btn"
+            onclick="closeModal()">
+
             Fechar
+
           </button>
+
         </div>
 
       `;
@@ -933,39 +1294,86 @@ function openModal(type){
     content.innerHTML = `
 
       <div class="form-group">
+
         <label>Cliente</label>
 
         <select id="appointmentClient">
+
           ${clientOptions}
+
         </select>
+
       </div>
 
+
       <div class="form-group">
+
         <label>Serviço</label>
 
         <select id="appointmentService">
+
           ${serviceOptions}
+
         </select>
+
       </div>
 
+
       <div class="form-group">
+
         <label>Data</label>
-        <input id="appointmentDate" type="date" value="${today()}">
+
+        <input
+          id="appointmentDate"
+          type="date"
+          value="${
+            appointment
+            ? appointment.date
+            : today()
+          }"
+        >
+
       </div>
 
+
       <div class="form-group">
+
         <label>Horário</label>
-        <input id="appointmentTime" type="time">
+
+        <input
+          id="appointmentTime"
+          type="time"
+          value="${
+            appointment
+            ? appointment.time
+            : ""
+          }"
+        >
+
       </div>
+
 
       <div class="modal-actions">
 
-        <button class="btn btn-secondary" onclick="closeModal()">
+        <button
+          class="btn btn-secondary"
+          onclick="closeModal()">
+
           Cancelar
+
         </button>
 
-        <button class="btn" onclick="addAppointment()">
-          Agendar
+
+        <button
+          class="btn"
+          onclick="${
+            editing
+            ? `updateAppointment(${appointmentId})`
+            : "addAppointment()"
+          }">
+
+          ${editing ? "Salvar alterações" : "Agendar"}
+
         </button>
 
       </div>
@@ -977,49 +1385,76 @@ function openModal(type){
 }
 
 
+/* =========================
+   FECHAR MODAL
+========================= */
+
 function closeModal(){
 
-  document.getElementById("modal")
+  document
+    .getElementById("modal")
     .classList.remove("show");
 
 }
 
 
-document.getElementById("modal").addEventListener("click", function(event){
+document
+.getElementById("modal")
+.addEventListener(
+  "click",
+  function(event){
 
-  if(event.target === this){
-    closeModal();
+    if(event.target === this){
+
+      closeModal();
+
+    }
+
   }
-
-});
+);
 
 
 /* =========================
-   CLIENTES
+   ADICIONAR CLIENTE
 ========================= */
 
 function addClient(){
 
-  const name = document.getElementById("clientName").value.trim();
-  const phone = document.getElementById("clientPhone").value.trim();
+  const name =
+    document
+      .getElementById("clientName")
+      .value
+      .trim();
+
+
+  const phone =
+    document
+      .getElementById("clientPhone")
+      .value
+      .trim();
+
 
   if(!name){
 
-    alert("Digite o nome da cliente.");
+    alert(
+      "Digite o nome da cliente."
+    );
 
     return;
 
   }
 
+
   data.clients.push({
 
-    id: Date.now(),
+    id:Date.now(),
 
     name:name,
 
     phone:phone
 
   });
+
 
   save();
 
@@ -1030,59 +1465,96 @@ function addClient(){
 }
 
 
+/* =========================
+   EXCLUIR CLIENTE
+========================= */
+
 function deleteClient(id){
 
-  const client = getClient(id);
+  const client =
+    getClient(id);
+
 
   if(!client) return;
 
 
-  const confirmed = confirm(
-    `Excluir a cliente "${client.name}"?\n\n` +
-    `Os agendamentos dessa cliente também serão excluídos.`
-  );
+  const confirmed =
+    confirm(
+
+      `Excluir a cliente "${client.name}"?\n\n` +
+
+      `Os agendamentos dessa cliente também serão excluídos.`
+
+    );
 
 
   if(!confirmed) return;
 
 
-  data.clients = data.clients.filter(
-    client => Number(client.id) !== Number(id)
-  );
+  data.clients =
+    data.clients.filter(
+      client =>
+        Number(client.id) !==
+        Number(id)
+    );
 
 
-  data.appointments = data.appointments.filter(
-    appointment => Number(appointment.clientId) !== Number(id)
-  );
+  data.appointments =
+    data.appointments.filter(
+      appointment =>
+        Number(appointment.clientId) !==
+        Number(id)
+    );
 
 
   save();
 
   renderAll();
 
-  alert("Cliente excluída com sucesso.");
+
+  alert(
+    "Cliente excluída com sucesso."
+  );
 
 }
 
 
+/* =========================
+   FICHA DO CLIENTE
+========================= */
+
 function clientDetails(id){
 
-  const client = getClient(id);
+  const client =
+    getClient(id);
+
 
   if(!client) return;
 
-  const appointments = data.appointments.filter(
-    a => Number(a.clientId) === Number(id)
-  );
+
+  const appointments =
+    data.appointments.filter(
+      a =>
+        Number(a.clientId) ===
+        Number(id)
+    );
 
 
-  let text = `Cliente: ${client.name}\n`;
+  let text =
+    `Cliente: ${client.name}\n`;
+
 
   if(client.phone){
-    text += `Telefone: ${client.phone}\n`;
+
+    text +=
+      `Telefone: ${client.phone}\n`;
+
   }
 
-  text += `\nAgendamentos: ${appointments.length}`;
+
+  text +=
+    `\nAgendamentos: ${appointments.length}`;
+
 
   alert(text);
 
@@ -1090,22 +1562,31 @@ function clientDetails(id){
 
 
 /* =========================
-   SERVIÇOS
+   ADICIONAR SERVIÇO
 ========================= */
 
 function addService(){
 
-  const name = document.getElementById("serviceName")
-    .value.trim();
+  const name =
+    document
+      .getElementById("serviceName")
+      .value
+      .trim();
 
-  const price = Number(
-    document.getElementById("servicePrice").value
-  );
+
+  const price =
+    Number(
+      document
+        .getElementById("servicePrice")
+        .value
+    );
 
 
   if(!name){
 
-    alert("Digite o nome do serviço.");
+    alert(
+      "Digite o nome do serviço."
+    );
 
     return;
 
@@ -1114,7 +1595,7 @@ function addService(){
 
   data.services.push({
 
-    id: Date.now(),
+    id:Date.now(),
 
     name:name,
 
@@ -1133,27 +1614,44 @@ function addService(){
 
 
 /* =========================
-   AGENDAMENTOS
+   ADICIONAR AGENDAMENTO
 ========================= */
 
 function addAppointment(){
 
   const clientId =
-    Number(document.getElementById("appointmentClient").value);
+    Number(
+      document
+        .getElementById("appointmentClient")
+        .value
+    );
+
 
   const serviceId =
-    Number(document.getElementById("appointmentService").value);
+    Number(
+      document
+        .getElementById("appointmentService")
+        .value
+    );
+
 
   const date =
-    document.getElementById("appointmentDate").value;
+    document
+      .getElementById("appointmentDate")
+      .value;
+
 
   const time =
-    document.getElementById("appointmentTime").value;
+    document
+      .getElementById("appointmentTime")
+      .value;
 
 
   if(!date || !time){
 
-    alert("Informe a data e o horário.");
+    alert(
+      "Informe a data e o horário."
+    );
 
     return;
 
@@ -1187,48 +1685,151 @@ function addAppointment(){
 
 
 /* =========================
-   CANCELAR AGENDAMENTO
+   EDITAR AGENDAMENTO
 ========================= */
 
-function cancelAppointment(id){
+function updateAppointment(id){
 
-  const appointment = data.appointments.find(
-    a => Number(a.id) === Number(id)
-  );
+  const appointment =
+    data.appointments.find(
+      a =>
+        Number(a.id) ===
+        Number(id)
+    );
 
 
-  if(!appointment) return;
+  if(!appointment){
 
-
-  if(appointment.status === "Cancelado"){
-
-    alert("Este agendamento já está cancelado.");
+    alert(
+      "Agendamento não encontrado."
+    );
 
     return;
 
   }
 
 
-  const client = getClient(appointment.clientId);
+  const clientId =
+    Number(
+      document
+        .getElementById("appointmentClient")
+        .value
+    );
 
 
-  const confirmed = confirm(
+  const serviceId =
+    Number(
+      document
+        .getElementById("appointmentService")
+        .value
+    );
 
-    `Cancelar o agendamento de ${client ? client.name : "cliente"}?\n\n` +
 
-    `Data: ${formatDate(appointment.date)}\n` +
+  const date =
+    document
+      .getElementById("appointmentDate")
+      .value;
 
-    `Horário: ${appointment.time}\n\n` +
 
-    `O agendamento continuará no histórico como CANCELADO.`
+  const time =
+    document
+      .getElementById("appointmentTime")
+      .value;
 
+
+  if(!date || !time){
+
+    alert(
+      "Informe a data e o horário."
+    );
+
+    return;
+
+  }
+
+
+  appointment.clientId =
+    clientId;
+
+  appointment.serviceId =
+    serviceId;
+
+  appointment.date =
+    date;
+
+  appointment.time =
+    time;
+
+
+  save();
+
+  closeModal();
+
+  renderAll();
+
+
+  alert(
+    "Agendamento atualizado!"
   );
+
+}
+
+
+/* =========================
+   CANCELAR / EXCLUIR AGENDAMENTO
+========================= */
+
+function cancelAppointment(id){
+
+  const appointment =
+    data.appointments.find(
+      a =>
+        Number(a.id) ===
+        Number(id)
+    );
+
+
+  if(!appointment) return;
+
+
+  const client =
+    getClient(
+      appointment.clientId
+    );
+
+
+  const confirmed =
+    confirm(
+
+      `Cancelar o agendamento de ${
+        client
+        ? client.name
+        : "cliente"
+      }?\n\n` +
+
+      `Data: ${formatDate(
+        appointment.date
+      )}\n` +
+
+      `Horário: ${
+        appointment.time
+      }\n\n` +
+
+      `Ao confirmar, o agendamento será excluído da agenda.`
+
+    );
 
 
   if(!confirmed) return;
 
 
-  appointment.status = "Cancelado";
+  data.appointments =
+    data.appointments.filter(
+      a =>
+        Number(a.id) !==
+        Number(id)
+    );
+
 
   save();
 
@@ -1238,61 +1839,25 @@ function cancelAppointment(id){
 
 
 /* =========================
-   STATUS
+   DEFINIR STATUS
 ========================= */
 
-function setStatus(id, status){
+function setStatus(id,status){
 
-  const appointment = data.appointments.find(
-    a => Number(a.id) === Number(id)
-  );
+  const appointment =
+    data.appointments.find(
+      a =>
+        Number(a.id) ===
+        Number(id)
+    );
 
 
   if(!appointment) return;
 
 
-  if(appointment.status === "Cancelado"){
-    return;
-  }
+  appointment.status =
+    status;
 
-
-  appointment.status = status;
-
-  save();
-
-  renderAll();
-
-}
-
-
-function cycleStatus(id){
-
-  const appointment = data.appointments.find(
-    a => Number(a.id) === Number(id)
-  );
-
-
-  if(!appointment || appointment.status === "Cancelado"){
-    return;
-  }
-
-
-  const statuses = [
-    "Aguardando",
-    "Presente",
-    "Falta"
-  ];
-
-
-  const currentIndex =
-    statuses.indexOf(appointment.status);
-
-
-  const nextIndex =
-    (currentIndex + 1) % statuses.length;
-
-
-  appointment.status = statuses[nextIndex];
 
   save();
 
@@ -1302,7 +1867,7 @@ function cycleStatus(id){
 
 
 /* =========================
-   RENDERIZAÇÃO
+   RENDERIZAR TUDO
 ========================= */
 
 function renderAll(){
@@ -1328,52 +1893,86 @@ function renderAll(){
 
 function renderHome(){
 
-  const todayAppointments =
-    data.appointments.filter(a => a.date === today());
+  const appointments =
+    data.appointments.filter(
+      a =>
+        a.date === today()
+    );
 
 
   const present =
-    todayAppointments.filter(a => a.status === "Presente");
+    appointments.filter(
+      a =>
+        a.status === "Presente"
+    );
 
 
   const absent =
-    todayAppointments.filter(a => a.status === "Falta");
+    appointments.filter(
+      a =>
+        a.status === "Falta"
+    );
 
 
   const revenue =
-    present.reduce((total, appointment) => {
+    present.reduce(
+      (total,appointment) => {
 
-      const service = getService(appointment.serviceId);
-
-      return total + (service ? Number(service.price) : 0);
-
-    },0);
-
-
-  document.getElementById("homeToday").textContent =
-    todayAppointments.length;
+        const service =
+          getService(
+            appointment.serviceId
+          );
 
 
-  document.getElementById("homePresent").textContent =
+        return total +
+          (
+            service
+            ? Number(service.price)
+            : 0
+          );
+
+      },
+      0
+    );
+
+
+  document
+    .getElementById("homeToday")
+    .textContent =
+    appointments.length;
+
+
+  document
+    .getElementById("homePresent")
+    .textContent =
     present.length;
 
 
-  document.getElementById("homeAbsent").textContent =
+  document
+    .getElementById("homeAbsent")
+    .textContent =
     absent.length;
 
 
-  document.getElementById("homeRevenue").textContent =
+  document
+    .getElementById("homeRevenue")
+    .textContent =
     money(revenue);
 
 
   const container =
-    document.getElementById("homeAppointments");
+    document
+      .getElementById(
+        "homeAppointments"
+      );
 
 
-  if(!todayAppointments.length){
+  if(!appointments.length){
 
     container.innerHTML =
-      `<p style="color:#8a7566">Nenhum atendimento hoje.</p>`;
+      `<p style="color:#8a7566">
+        Nenhum atendimento hoje.
+      </p>`;
 
     return;
 
@@ -1381,9 +1980,14 @@ function renderHome(){
 
 
   container.innerHTML =
-    todayAppointments
-      .sort((a,b) => a.time.localeCompare(b.time))
-      .map(appointmentHtml)
+    appointments
+      .sort(
+        (a,b) =>
+          a.time.localeCompare(b.time)
+      )
+      .map(
+        appointmentHtml
+      )
       .join("");
 
 }
@@ -1396,24 +2000,36 @@ function renderHome(){
 function renderAgenda(){
 
   const container =
-    document.getElementById("agendaList");
+    document
+      .getElementById(
+        "agendaList"
+      );
 
 
   const appointments =
-    [...data.appointments].sort((a,b) => {
+    [...data.appointments]
+      .sort((a,b) => {
 
-      const dateA = a.date + " " + a.time;
-      const dateB = b.date + " " + b.time;
+        const dateA =
+          a.date + " " + a.time;
 
-      return dateA.localeCompare(dateB);
+        const dateB =
+          b.date + " " + b.time;
 
-    });
+
+        return dateA.localeCompare(
+          dateB
+        );
+
+      });
 
 
   if(!appointments.length){
 
     container.innerHTML =
-      `<p style="color:#8a7566">Nenhum agendamento.</p>`;
+      `<p style="color:#8a7566">
+        Nenhum agendamento.
+      </p>`;
 
     return;
 
@@ -1421,58 +2037,45 @@ function renderAgenda(){
 
 
   container.innerHTML =
-    appointments.map(appointmentHtml).join("");
+    appointments
+      .map(
+        appointmentHtml
+      )
+      .join("");
 
 }
 
 
 /* =========================
-   HTML AGENDAMENTO
+   HTML DO AGENDAMENTO
 ========================= */
 
-function appointmentHtml(appointment){
+function appointmentHtml(
+  appointment
+){
 
-  const client = getClient(appointment.clientId);
+  const client =
+    getClient(
+      appointment.clientId
+    );
 
-  const service = getService(appointment.serviceId);
+
+  const service =
+    getService(
+      appointment.serviceId
+    );
 
 
   const clientName =
-    client ? escapeHtml(client.name) : "Cliente removida";
+    client
+    ? escapeHtml(client.name)
+    : "Cliente removida";
 
 
   const serviceName =
-    service ? escapeHtml(service.name) : "Serviço removido";
-
-
-  let actions = "";
-
-
-  if(appointment.status !== "Cancelado"){
-
-    actions = `
-
-      <button
-        class="btn-success"
-        onclick="setStatus(${appointment.id}, 'Presente')">
-        Presente
-      </button>
-
-      <button
-        class="btn-secondary"
-        onclick="setStatus(${appointment.id}, 'Falta')">
-        Falta
-      </button>
-
-      <button
-        class="btn-cancel"
-        onclick="cancelAppointment(${appointment.id})">
-        Cancelar
-      </button>
-
-    `;
-
-  }
+    service
+    ? escapeHtml(service.name)
+    : "Serviço removido";
 
 
   return `
@@ -1482,26 +2085,98 @@ function appointmentHtml(appointment){
       <div class="item-info">
 
         <strong>
-          ${appointment.time} • ${clientName}
+
+          ${formatDate(
+            appointment.date
+          )}
+
+          •
+
+          ${appointment.time}
+
+          •
+
+          ${clientName}
+
         </strong>
 
+
         <span>
-          ${formatDate(appointment.date)} • ${serviceName}
+
+          ${serviceName}
+
         </span>
+
 
         <div style="margin-top:7px">
 
-          <span class="status status-${appointment.status}">
+          <span
+            class="status status-${appointment.status}">
+
             ${appointment.status}
+
           </span>
 
         </div>
 
       </div>
 
+
       <div class="actions">
 
-        ${actions}
+        ${
+          appointment.status !== "Cancelado"
+          ? `
+
+            <button
+              class="btn-success"
+              onclick="setStatus(
+                ${appointment.id},
+                'Presente'
+              )">
+
+              Presente
+
+            </button>
+
+
+            <button
+              class="btn-secondary"
+              onclick="setStatus(
+                ${appointment.id},
+                'Falta'
+              )">
+
+              Falta
+
+            </button>
+
+          `
+          : ""
+        }
+
+
+        <button
+          class="btn-edit"
+          onclick="openModal(
+            'appointment',
+            ${appointment.id}
+          )">
+
+          ✏️ Editar
+
+        </button>
+
+
+        <button
+          class="btn-cancel"
+          onclick="cancelAppointment(
+            ${appointment.id}
+          )">
+
+          🗑️ Cancelar
+
+        </button>
 
       </div>
 
@@ -1519,30 +2194,37 @@ function appointmentHtml(appointment){
 function renderClients(){
 
   const container =
-    document.getElementById("clientsList");
+    document
+      .getElementById(
+        "clientsList"
+      );
 
 
   const search =
-    document.getElementById("clientSearch")
+    document
+      .getElementById(
+        "clientSearch"
+      )
       .value
       .toLowerCase()
       .trim();
 
 
   const clients =
-    data.clients.filter(client => {
-
-      return client.name
-        .toLowerCase()
-        .includes(search);
-
-    });
+    data.clients.filter(
+      client =>
+        client.name
+          .toLowerCase()
+          .includes(search)
+    );
 
 
   if(!clients.length){
 
     container.innerHTML =
-      `<p style="color:#8a7566">Nenhuma cliente encontrada.</p>`;
+      `<p style="color:#8a7566">
+        Nenhuma cliente encontrada.
+      </p>`;
 
     return;
 
@@ -1550,41 +2232,62 @@ function renderClients(){
 
 
   container.innerHTML =
-    clients.map(client => `
+    clients
+      .map(
+        client => `
 
-      <div class="item">
+          <div class="item">
 
-        <div class="item-info">
+            <div class="item-info">
 
-          <strong>
-            ${escapeHtml(client.name)}
-          </strong>
+              <strong>
+                ${escapeHtml(
+                  client.name
+                )}
+              </strong>
 
-          <span>
-            ${escapeHtml(client.phone || "Telefone não informado")}
-          </span>
+              <span>
+                ${
+                  escapeHtml(
+                    client.phone ||
+                    "Telefone não informado"
+                  )
+                }
+              </span>
 
-        </div>
+            </div>
 
-        <div class="actions">
 
-          <button
-            class="btn-secondary"
-            onclick="clientDetails(${client.id})">
-            Ver ficha
-          </button>
+            <div class="actions">
 
-          <button
-            class="btn-delete"
-            onclick="deleteClient(${client.id})">
-            Excluir
-          </button>
+              <button
+                class="btn-secondary"
+                onclick="clientDetails(
+                  ${client.id}
+                )">
 
-        </div>
+                Ver ficha
 
-      </div>
+              </button>
 
-    `).join("");
+
+              <button
+                class="btn-delete"
+                onclick="deleteClient(
+                  ${client.id}
+                )">
+
+                🗑️ Excluir
+
+              </button>
+
+            </div>
+
+          </div>
+
+        `
+      )
+      .join("");
 
 }
 
@@ -1596,16 +2299,25 @@ function renderClients(){
 function renderPresence(){
 
   const container =
-    document.getElementById("presenceList");
+    document
+      .getElementById(
+        "presenceList"
+      );
 
 
   const appointments =
     data.appointments
-      .filter(a => a.status !== "Cancelado")
+      .filter(
+        a =>
+          a.status !== "Cancelado"
+      )
       .sort((a,b) => {
 
-        return (a.date + a.time)
-          .localeCompare(b.date + b.time);
+        return (
+          a.date + a.time
+        ).localeCompare(
+          b.date + b.time
+        );
 
       });
 
@@ -1614,7 +2326,7 @@ function renderPresence(){
 
     container.innerHTML =
       `<p style="color:#8a7566">
-        Nenhum atendimento pendente de controle.
+        Nenhum atendimento.
       </p>`;
 
     return;
@@ -1623,61 +2335,111 @@ function renderPresence(){
 
 
   container.innerHTML =
-    appointments.map(appointment => {
+    appointments
+      .map(
+        appointment => {
 
-      const client =
-        getClient(appointment.clientId);
+          const client =
+            getClient(
+              appointment.clientId
+            );
 
-      const service =
-        getService(appointment.serviceId);
+
+          const service =
+            getService(
+              appointment.serviceId
+            );
 
 
-      return `
+          return `
 
-        <div class="item">
+            <div class="item">
 
-          <div class="item-info">
+              <div class="item-info">
 
-            <strong>
-              ${formatDate(appointment.date)}
-              às ${appointment.time}
-            </strong>
+                <strong>
 
-            <span>
-              ${client ? escapeHtml(client.name) : "Cliente removida"}
-              •
-              ${service ? escapeHtml(service.name) : "Serviço removido"}
-            </span>
+                  ${formatDate(
+                    appointment.date
+                  )}
 
-          </div>
+                  às
 
-          <div class="actions">
+                  ${appointment.time}
 
-            <button
-              class="btn-success"
-              onclick="setStatus(${appointment.id}, 'Presente')">
-              Presente
-            </button>
+                </strong>
 
-            <button
-              class="btn-secondary"
-              onclick="setStatus(${appointment.id}, 'Falta')">
-              Falta
-            </button>
 
-            <button
-              class="btn-cancel"
-              onclick="cancelAppointment(${appointment.id})">
-              Cancelar
-            </button>
+                <span>
 
-          </div>
+                  ${
+                    client
+                    ? escapeHtml(
+                        client.name
+                      )
+                    : "Cliente removida"
+                  }
 
-        </div>
+                  •
 
-      `;
+                  ${
+                    service
+                    ? escapeHtml(
+                        service.name
+                      )
+                    : "Serviço removido"
+                  }
 
-    }).join("");
+                </span>
+
+              </div>
+
+
+              <div class="actions">
+
+                <button
+                  class="btn-success"
+                  onclick="setStatus(
+                    ${appointment.id},
+                    'Presente'
+                  )">
+
+                  Presente
+
+                </button>
+
+
+                <button
+                  class="btn-secondary"
+                  onclick="setStatus(
+                    ${appointment.id},
+                    'Falta'
+                  )">
+
+                  Falta
+
+                </button>
+
+
+                <button
+                  class="btn-cancel"
+                  onclick="cancelAppointment(
+                    ${appointment.id}
+                  )">
+
+                  🗑️ Cancelar
+
+                </button>
+
+              </div>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join("");
 
 }
 
@@ -1690,32 +2452,54 @@ function renderFinance(){
 
   const present =
     data.appointments.filter(
-      a => a.status === "Presente"
+      a =>
+        a.status === "Presente"
     );
 
 
   const revenue =
-    present.reduce((total, appointment) => {
+    present.reduce(
+      (total,appointment) => {
 
-      const service =
-        getService(appointment.serviceId);
-
-      return total +
-        (service ? Number(service.price) : 0);
-
-    },0);
+        const service =
+          getService(
+            appointment.serviceId
+          );
 
 
-  document.getElementById("financeCount")
-    .textContent = present.length;
+        return total +
+          (
+            service
+            ? Number(service.price)
+            : 0
+          );
+
+      },
+      0
+    );
 
 
-  document.getElementById("financeRevenue")
-    .textContent = money(revenue);
+  document
+    .getElementById(
+      "financeCount"
+    )
+    .textContent =
+    present.length;
+
+
+  document
+    .getElementById(
+      "financeRevenue"
+    )
+    .textContent =
+    money(revenue);
 
 
   const container =
-    document.getElementById("financeList");
+    document
+      .getElementById(
+        "financeList"
+      );
 
 
   if(!present.length){
@@ -1731,44 +2515,83 @@ function renderFinance(){
 
 
   container.innerHTML =
-    present.map(appointment => {
+    present
+      .map(
+        appointment => {
 
-      const client =
-        getClient(appointment.clientId);
+          const client =
+            getClient(
+              appointment.clientId
+            );
 
-      const service =
-        getService(appointment.serviceId);
+
+          const service =
+            getService(
+              appointment.serviceId
+            );
 
 
-      return `
+          return `
 
-        <div class="item">
+            <div class="item">
 
-          <div class="item-info">
+              <div class="item-info">
 
-            <strong>
-              ${client ? escapeHtml(client.name) : "Cliente removida"}
-            </strong>
+                <strong>
 
-            <span>
-              ${formatDate(appointment.date)}
-              •
-              ${appointment.time}
-              •
-              ${service ? escapeHtml(service.name) : "Serviço removido"}
-            </span>
+                  ${
+                    client
+                    ? escapeHtml(
+                        client.name
+                      )
+                    : "Cliente removida"
+                  }
 
-          </div>
+                </strong>
 
-          <strong>
-            ${money(service ? service.price : 0)}
-          </strong>
 
-        </div>
+                <span>
 
-      `;
+                  ${formatDate(
+                    appointment.date
+                  )}
 
-    }).join("");
+                  •
+
+                  ${appointment.time}
+
+                  •
+
+                  ${
+                    service
+                    ? escapeHtml(
+                        service.name
+                      )
+                    : "Serviço removido"
+                  }
+
+                </span>
+
+              </div>
+
+
+              <strong>
+
+                ${money(
+                  service
+                  ? service.price
+                  : 0
+                )}
+
+              </strong>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join("");
 
 }
 
@@ -1780,13 +2603,18 @@ function renderFinance(){
 function renderServices(){
 
   const container =
-    document.getElementById("servicesList");
+    document
+      .getElementById(
+        "servicesList"
+      );
 
 
   if(!data.services.length){
 
     container.innerHTML =
-      `<p style="color:#8a7566">Nenhum serviço cadastrado.</p>`;
+      `<p style="color:#8a7566">
+        Nenhum serviço cadastrado.
+      </p>`;
 
     return;
 
@@ -1794,29 +2622,42 @@ function renderServices(){
 
 
   container.innerHTML =
-    data.services.map(service => `
+    data.services
+      .map(
+        service => `
 
-      <div class="item">
+          <div class="item">
 
-        <div class="item-info">
+            <div class="item-info">
 
-          <strong>
-            ${escapeHtml(service.name)}
-          </strong>
+              <strong>
 
-          <span>
-            Serviço
-          </span>
+                ${escapeHtml(
+                  service.name
+                )}
 
-        </div>
+              </strong>
 
-        <strong>
-          ${money(service.price)}
-        </strong>
+              <span>
+                Serviço
+              </span>
 
-      </div>
+            </div>
 
-    `).join("");
+
+            <strong>
+
+              ${money(
+                service.price
+              )}
+
+            </strong>
+
+          </div>
+
+        `
+      )
+      .join("");
 
 }
 
@@ -1828,25 +2669,49 @@ function renderServices(){
 function escapeHtml(text){
 
   return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
 
 /* =========================
-   BUSCA CLIENTE
+   BUSCA
 ========================= */
 
-document.getElementById("clientSearch")
-  .addEventListener("input", renderClients);
+document
+.getElementById("clientSearch")
+.addEventListener(
+  "input",
+  renderClients
+);
 
 
 /* =========================
-   INICIAR
+   INICIAR APLICATIVO
 ========================= */
 
 loadData();
