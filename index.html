@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,39 +6,20 @@
 <title>Joana Vieira • Agenda</title>
 
 <style>
-:root{
-  --bg:#f8f2e9;
-  --card:#fffaf3;
-  --brown:#8a6047;
-  --brown2:#6f4b38;
-  --gold:#b18a68;
-  --line:#eadccc;
-  --text:#4f4036;
-  --muted:#8f8176;
-  --green:#4e9b72;
-  --orange:#d28a43;
-  --red:#c96b62;
-}
-
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
 }
 
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,sans-serif;
-}
-
-button,
-input,
-select,
-textarea{
-  font:inherit;
+  background:#f5efe8;
+  color:#4b3528;
 }
 
 button{
+  border:0;
   cursor:pointer;
 }
 
@@ -49,302 +29,250 @@ button{
 }
 
 /* MENU */
-.side{
+.sidebar{
   width:230px;
-  background:#f2e7d9;
-  border-right:1px solid var(--line);
-  padding:24px 16px;
-  position:fixed;
-  height:100vh;
-  left:0;
-  top:0;
-  z-index:10;
+  background:#5b4030;
+  color:white;
+  padding:25px 15px;
 }
 
-.brand{
+.logo{
   text-align:center;
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
-.brand .jv{
-  font:42px Georgia;
-  color:var(--brown2);
-  letter-spacing:3px;
+.logo-circle{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#d8b08c;
+  color:#5b4030;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:bold;
+  margin:auto;
 }
 
-.brand b{
-  display:block;
-  font-size:11px;
-  letter-spacing:4px;
-}
-
-.brand small{
-  display:block;
+.logo h2{
   margin-top:10px;
-  font-family:cursive;
-  color:var(--brown);
+  font-size:20px;
+}
+
+.logo p{
+  font-size:12px;
+  opacity:.8;
 }
 
 .nav button{
   width:100%;
-  border:0;
+  padding:13px;
+  margin-bottom:7px;
+  border-radius:10px;
   background:transparent;
+  color:white;
   text-align:left;
-  padding:13px 14px;
-  border-radius:12px;
-  color:var(--text);
-  margin:3px 0;
+  font-size:15px;
 }
 
-.nav button.active,
-.nav button:hover{
-  background:#fff8ef;
-  color:var(--brown2);
+.nav button:hover,
+.nav button.active{
+  background:#7a5842;
 }
 
 /* CONTEÚDO */
-.main{
-  margin-left:230px;
-  width:calc(100% - 230px);
-  padding:28px;
-  max-width:1400px;
+.content{
+  flex:1;
+  padding:25px;
+  max-width:1200px;
+  margin:auto;
+  width:100%;
 }
 
-.top{
+.page{
+  display:block;
+}
+
+.hidden{
+  display:none !important;
+}
+
+.header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:24px;
+  margin-bottom:25px;
 }
 
-.top h1{
-  font:30px Georgia;
-  margin:0;
-  color:var(--brown2);
+.header h1{
+  font-size:27px;
 }
 
 .subtitle{
-  color:var(--muted);
-  font-size:13px;
+  color:#8a7566;
   margin-top:5px;
 }
 
 .btn{
-  border:0;
-  background:var(--brown);
+  background:#6b4a36;
   color:white;
-  padding:11px 16px;
-  border-radius:12px;
+  padding:11px 17px;
+  border-radius:9px;
+  font-weight:bold;
 }
 
 .btn:hover{
   opacity:.9;
 }
 
-.btn.secondary{
-  background:#ead9c7;
-  color:var(--brown2);
+.btn-danger{
+  background:#b94a48;
+}
+
+.btn-secondary{
+  background:#d6c2b2;
+  color:#4b3528;
+}
+
+.btn-success{
+  background:#5c8a68;
 }
 
 /* CARDS */
-.grid{
+.cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  gap:15px;
+  margin-bottom:25px;
 }
 
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 4px 18px #7a563b0b;
-}
-
-.stat .label{
-  font-size:12px;
-  color:var(--muted);
-}
-
-.stat .value{
-  font-size:26px;
-  font-weight:700;
-  margin-top:7px;
-  color:var(--brown2);
-}
-
-/* PAINÉIS */
-.panel{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:18px;
+  background:white;
   padding:20px;
-  margin-top:18px;
+  border-radius:15px;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-.panel h2{
-  font:20px Georgia;
-  color:var(--brown2);
-  margin:0 0 15px;
+.card small{
+  color:#8a7566;
 }
 
-/* TABELAS */
-.table{
-  width:100%;
-  border-collapse:collapse;
+.card h2{
+  margin-top:10px;
+  font-size:28px;
 }
 
-.table th,
-.table td{
-  padding:12px 8px;
-  border-bottom:1px solid var(--line);
-  text-align:left;
-  font-size:13px;
+/* TABELAS/LISTAS */
+.section{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-.table th{
-  color:var(--muted);
-  font-weight:normal;
-}
-
-/* STATUS */
-.badge{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:20px;
-  font-size:11px;
-}
-
-.ok{
-  background:#e4f2e9;
-  color:#397b58;
-}
-
-.wait{
-  background:#fff0dc;
-  color:#a66422;
-}
-
-.abs{
-  background:#f8e3e1;
-  color:#a64e48;
-}
-
-.cancel{
-  background:#eee8e2;
-  color:#756960;
-}
-
-/* ABAS */
-.tabs{
+.section-title{
   display:flex;
-  gap:7px;
+  justify-content:space-between;
+  align-items:center;
   margin-bottom:15px;
 }
 
-.tabs button{
-  border:1px solid var(--line);
-  background:#fff8ef;
-  border-radius:10px;
-  padding:8px 13px;
-  color:var(--text);
-}
-
-.tabs button.active{
-  background:var(--brown);
-  color:#fff;
-}
-
-/* BUSCA */
-.search{
+.item{
+  border-bottom:1px solid #eee;
+  padding:15px 0;
   display:flex;
+  justify-content:space-between;
+  align-items:center;
   gap:10px;
-  margin-bottom:15px;
 }
 
-.search input,
-.form input,
-.form select,
-.form textarea{
-  width:100%;
-  padding:11px 12px;
-  border:1px solid var(--line);
-  border-radius:11px;
-  background:#fffdf9;
-  color:var(--text);
+.item:last-child{
+  border-bottom:0;
 }
 
-.form{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.form .full{
-  grid-column:1/-1;
-}
-
-.form label{
-  font-size:12px;
-  color:var(--muted);
+.item-info strong{
   display:block;
   margin-bottom:5px;
 }
 
+.item-info span{
+  color:#8a7566;
+  font-size:14px;
+}
+
 .actions{
   display:flex;
-  gap:8px;
+  gap:7px;
+  flex-wrap:wrap;
   justify-content:flex-end;
-  margin-top:15px;
 }
 
-/* CLIENTES */
-.client{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.avatar{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  background:#9a6d50;
-  color:white;
-  display:grid;
-  place-items:center;
-  margin-right:10px;
-}
-
-.client-left{
-  display:flex;
-  align-items:center;
-}
-
-.muted{
-  color:var(--muted);
+.actions button{
+  padding:8px 11px;
+  border-radius:7px;
   font-size:12px;
+  font-weight:bold;
 }
 
-.empty{
-  padding:30px;
-  text-align:center;
-  color:var(--muted);
+.btn-cancel{
+  background:#f0c8c7;
+  color:#8d302e;
 }
 
-/* IMPORTANTE:
-   O modal agora começa realmente escondido.
-*/
+.btn-delete{
+  background:#ead5d5;
+  color:#9b3030;
+}
+
+/* STATUS */
+.status{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.status-Aguardando{
+  background:#fff0c2;
+  color:#8a6500;
+}
+
+.status-Presente{
+  background:#d5edd9;
+  color:#3d7548;
+}
+
+.status-Falta{
+  background:#f4d4d4;
+  color:#9b3636;
+}
+
+.status-Cancelado{
+  background:#ddd;
+  color:#555;
+}
+
+/* BUSCA */
+.search{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:9px;
+  margin-bottom:15px;
+}
+
+/* MODAL */
 #modal{
   position:fixed;
   inset:0;
-  background:#3c2c2490;
+  background:rgba(0,0,0,.5);
   display:none;
   place-items:center;
-  padding:18px;
-  z-index:100;
+  padding:20px;
+  z-index:1000;
 }
 
 #modal.show{
@@ -352,92 +280,131 @@ button{
 }
 
 .modal-box{
+  background:white;
   width:min(560px,100%);
-  margin:0;
   max-height:90vh;
   overflow:auto;
+  border-radius:15px;
+  padding:25px;
 }
 
-/* MOBILE */
-@media(max-width:900px){
+.modal-box h2{
+  margin-bottom:20px;
+}
 
-  .side{
-    width:74px;
-    padding:15px 8px;
+.form-group{
+  margin-bottom:15px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.form-group input,
+.form-group select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  background:white;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:20px;
+}
+
+/* RESPONSIVO */
+@media(max-width:800px){
+  .app{
+    display:block;
   }
 
-  .brand b,
-  .brand small,
-  .nav span{
+  .sidebar{
+    width:100%;
+    padding:12px;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-align:left;
+    margin-bottom:12px;
+  }
+
+  .logo-circle{
+    width:45px;
+    height:45px;
+    font-size:18px;
+    margin:0;
+  }
+
+  .logo h2{
+    margin:0;
+  }
+
+  .logo p{
     display:none;
   }
 
-  .brand .jv{
-    font-size:28px;
+  .nav{
+    display:flex;
+    overflow-x:auto;
+    gap:5px;
   }
 
-  .main{
-    margin-left:74px;
-    width:calc(100% - 74px);
-    padding:18px;
+  .nav button{
+    white-space:nowrap;
+    width:auto;
+    margin:0;
+    padding:10px 12px;
   }
 
-  .grid{
+  .content{
+    padding:15px;
+  }
+
+  .cards{
     grid-template-columns:repeat(2,1fr);
   }
-}
 
-@media(max-width:600px){
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .form{
-    grid-template-columns:1fr;
-  }
-
-  .top{
+  .header{
     align-items:flex-start;
     gap:10px;
   }
 
-  .top .btn{
-    padding:9px;
-    white-space:nowrap;
+  .header h1{
+    font-size:22px;
   }
 
-  .table{
-    font-size:12px;
-    display:block;
-    overflow-x:auto;
+  .item{
+    align-items:flex-start;
+    flex-direction:column;
   }
 
-  .side{
-    width:62px;
+  .actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
+
+@media(max-width:450px){
+  .cards{
+    grid-template-columns:1fr 1fr;
   }
 
-  .main{
-    margin-left:62px;
-    width:calc(100% - 62px);
-    padding:12px;
+  .card{
+    padding:15px;
   }
 
-  .top h1{
-    font-size:24px;
-  }
-
-  .panel{
-    padding:14px;
-  }
-
-  .client{
-    gap:10px;
-  }
-
-  .client .btn{
-    padding:8px 10px;
-    font-size:12px;
+  .card h2{
+    font-size:23px;
   }
 }
 </style>
@@ -447,320 +414,197 @@ button{
 
 <div class="app">
 
-<!-- MENU LATERAL -->
-<aside class="side">
+  <aside class="sidebar">
 
-  <div class="brand">
-    <div class="jv">JV</div>
-    <b>JOANA VIEIRA</b>
-    <small>
-      mais que beleza,<br>
-      é cuidado com você
-    </small>
-  </div>
-
-  <nav class="nav">
-
-    <button class="active" data-page="home">
-      ⌂ <span>Início</span>
-    </button>
-
-    <button data-page="agenda">
-      ▣ <span>Agenda</span>
-    </button>
-
-    <button data-page="clients">
-      ♙ <span>Clientes</span>
-    </button>
-
-    <button data-page="presence">
-      ✓ <span>Presença</span>
-    </button>
-
-    <button data-page="finance">
-      ◉ <span>Financeiro</span>
-    </button>
-
-    <button data-page="services">
-      ✦ <span>Serviços</span>
-    </button>
-
-  </nav>
-</aside>
-
-
-<!-- CONTEÚDO -->
-<main class="main">
-
-<!-- INÍCIO -->
-<section id="home" class="page">
-
-  <div class="top">
-
-    <div>
-      <h1>Olá, Joana! 🤎</h1>
-      <div class="subtitle">
-        Sua agenda organizada, de um jeito simples.
+    <div class="logo">
+      <div class="logo-circle">JV</div>
+      <div>
+        <h2>Joana Vieira</h2>
+        <p>Agenda</p>
       </div>
     </div>
 
-    <button class="btn" onclick="openModal('appointment')">
-      + Novo atendimento
-    </button>
-
-  </div>
-
-  <div class="grid">
-
-    <div class="card stat">
-      <div class="label">Clientes hoje</div>
-      <div class="value" id="sToday">0</div>
+    <div class="nav">
+      <button class="active" data-page="home">🏠 Início</button>
+      <button data-page="agenda">📅 Agenda</button>
+      <button data-page="clients">👩 Clientes</button>
+      <button data-page="presence">✅ Presença</button>
+      <button data-page="finance">💰 Financeiro</button>
+      <button data-page="services">💅 Serviços</button>
     </div>
 
-    <div class="card stat">
-      <div class="label">Presentes</div>
-      <div class="value" id="sPresent">0</div>
-    </div>
+  </aside>
 
-    <div class="card stat">
-      <div class="label">Faltas</div>
-      <div class="value" id="sAbsent">0</div>
-    </div>
+  <main class="content">
 
-    <div class="card stat">
-      <div class="label">Faturamento do mês</div>
-      <div class="value" id="sRevenue">R$ 0,00</div>
-    </div>
+    <!-- INÍCIO -->
+    <section id="home" class="page">
 
-  </div>
+      <div class="header">
+        <div>
+          <h1>Olá, Joana! 👋</h1>
+          <p class="subtitle">Resumo da sua agenda</p>
+        </div>
 
-  <div class="panel">
-
-    <h2>Próximos atendimentos</h2>
-
-    <div id="homeAppointments"></div>
-
-  </div>
-
-</section>
-
-
-<!-- AGENDA -->
-<section id="agenda" class="page hidden">
-
-  <div class="top">
-
-    <div>
-      <h1>Agenda</h1>
-      <div class="subtitle">
-        Organize seus horários e atendimentos.
-      </div>
-    </div>
-
-    <button class="btn" onclick="openModal('appointment')">
-      + Agendar
-    </button>
-
-  </div>
-
-  <div class="panel">
-
-    <div class="tabs">
-
-      <button class="active">
-        Hoje
-      </button>
-
-      <button>
-        Semana
-      </button>
-
-      <button>
-        Mês
-      </button>
-
-    </div>
-
-    <div id="agendaList"></div>
-
-  </div>
-
-</section>
-
-
-<!-- CLIENTES -->
-<section id="clients" class="page hidden">
-
-  <div class="top">
-
-    <div>
-      <h1>Clientes</h1>
-
-      <div class="subtitle">
-        Cadastro e histórico das suas clientes.
-      </div>
-    </div>
-
-    <button class="btn" onclick="openModal('client')">
-      + Nova cliente
-    </button>
-
-  </div>
-
-  <div class="panel">
-
-    <div class="search">
-
-      <input
-        id="clientSearch"
-        placeholder="Buscar por nome ou telefone..."
-      >
-
-    </div>
-
-    <div id="clientsList"></div>
-
-  </div>
-
-</section>
-
-
-<!-- PRESENÇA -->
-<section id="presence" class="page hidden">
-
-  <div class="top">
-
-    <div>
-
-      <h1>Controle de presença</h1>
-
-      <div class="subtitle">
-        Marque rapidamente quem compareceu.
+        <button class="btn" onclick="openModal('appointment')">
+          + Agendamento
+        </button>
       </div>
 
-    </div>
+      <div class="cards">
 
-  </div>
+        <div class="card">
+          <small>Agendamentos hoje</small>
+          <h2 id="homeToday">0</h2>
+        </div>
 
-  <div class="panel">
+        <div class="card">
+          <small>Presentes</small>
+          <h2 id="homePresent">0</h2>
+        </div>
 
-    <div id="presenceList"></div>
+        <div class="card">
+          <small>Faltas</small>
+          <h2 id="homeAbsent">0</h2>
+        </div>
 
-  </div>
+        <div class="card">
+          <small>Faturamento hoje</small>
+          <h2 id="homeRevenue">R$ 0,00</h2>
+        </div>
 
-</section>
-
-
-<!-- FINANCEIRO -->
-<section id="finance" class="page hidden">
-
-  <div class="top">
-
-    <div>
-
-      <h1>Financeiro</h1>
-
-      <div class="subtitle">
-        Acompanhe os serviços realizados e o faturamento.
       </div>
 
-    </div>
+      <div class="section">
+        <div class="section-title">
+          <h3>Próximos atendimentos</h3>
+        </div>
 
-  </div>
-
-  <div class="grid">
-
-    <div class="card stat">
-
-      <div class="label">
-        Faturamento
+        <div id="homeAppointments"></div>
       </div>
 
-      <div class="value" id="fRevenue">
-        R$ 0,00
+    </section>
+
+
+    <!-- AGENDA -->
+    <section id="agenda" class="page hidden">
+
+      <div class="header">
+        <div>
+          <h1>Agenda</h1>
+          <p class="subtitle">Seus agendamentos</p>
+        </div>
+
+        <button class="btn" onclick="openModal('appointment')">
+          + Agendamento
+        </button>
       </div>
 
-    </div>
-
-    <div class="card stat">
-
-      <div class="label">
-        Atendimentos
+      <div class="section">
+        <div id="agendaList"></div>
       </div>
 
-      <div class="value" id="fCount">
-        0
+    </section>
+
+
+    <!-- CLIENTES -->
+    <section id="clients" class="page hidden">
+
+      <div class="header">
+        <div>
+          <h1>Clientes</h1>
+          <p class="subtitle">Cadastro de clientes</p>
+        </div>
+
+        <button class="btn" onclick="openModal('client')">
+          + Cliente
+        </button>
       </div>
 
-    </div>
+      <div class="section">
 
-    <div class="card stat">
+        <input
+          id="clientSearch"
+          class="search"
+          placeholder="🔎 Buscar cliente..."
+        >
 
-      <div class="label">
-        Ticket médio
+        <div id="clientsList"></div>
+
       </div>
 
-      <div class="value" id="fTicket">
-        R$ 0,00
+    </section>
+
+
+    <!-- PRESENÇA -->
+    <section id="presence" class="page hidden">
+
+      <div class="header">
+        <div>
+          <h1>Presença</h1>
+          <p class="subtitle">Controle de presença dos atendimentos</p>
+        </div>
       </div>
 
-    </div>
-
-    <div class="card stat">
-
-      <div class="label">
-        Clientes
+      <div class="section">
+        <div id="presenceList"></div>
       </div>
 
-      <div class="value" id="fClients">
-        0
+    </section>
+
+
+    <!-- FINANCEIRO -->
+    <section id="finance" class="page hidden">
+
+      <div class="header">
+        <div>
+          <h1>Financeiro</h1>
+          <p class="subtitle">Resumo dos atendimentos realizados</p>
+        </div>
       </div>
 
-    </div>
+      <div class="cards">
 
-  </div>
+        <div class="card">
+          <small>Atendimentos realizados</small>
+          <h2 id="financeCount">0</h2>
+        </div>
 
-  <div class="panel">
+        <div class="card">
+          <small>Faturamento</small>
+          <h2 id="financeRevenue">R$ 0,00</h2>
+        </div>
 
-    <h2>Atendimentos realizados</h2>
-
-    <div id="financeList"></div>
-
-  </div>
-
-</section>
-
-
-<!-- SERVIÇOS -->
-<section id="services" class="page hidden">
-
-  <div class="top">
-
-    <div>
-
-      <h1>Serviços</h1>
-
-      <div class="subtitle">
-        Cadastre e altere os preços quando quiser.
       </div>
 
-    </div>
+      <div class="section">
+        <div id="financeList"></div>
+      </div>
 
-    <button class="btn" onclick="openModal('service')">
-      + Novo serviço
-    </button>
+    </section>
 
-  </div>
 
-  <div class="panel">
+    <!-- SERVIÇOS -->
+    <section id="services" class="page hidden">
 
-    <div id="servicesList"></div>
+      <div class="header">
+        <div>
+          <h1>Serviços</h1>
+          <p class="subtitle">Serviços e valores</p>
+        </div>
 
-  </div>
+        <button class="btn" onclick="openModal('service')">
+          + Serviço
+        </button>
+      </div>
 
-</section>
+      <div class="section">
+        <div id="servicesList"></div>
+      </div>
 
-</main>
+    </section>
+
+  </main>
 
 </div>
 
@@ -768,24 +612,11 @@ button{
 <!-- MODAL -->
 <div id="modal">
 
-  <div class="panel modal-box">
+  <div class="modal-box">
 
-    <div class="top">
+    <h2 id="modalTitle">Novo cadastro</h2>
 
-      <h2 id="modalTitle">
-        Novo
-      </h2>
-
-      <button
-        class="btn secondary"
-        onclick="closeModal()"
-      >
-        Fechar
-      </button>
-
-    </div>
-
-    <div id="modalBody"></div>
+    <div id="modalContent"></div>
 
   </div>
 
@@ -794,734 +625,90 @@ button{
 
 <script>
 
-/* =========================================================
-   CONFIGURAÇÕES
-========================================================= */
-
-const money = value =>
-  new Intl.NumberFormat('pt-BR',{
-    style:'currency',
-    currency:'BRL'
-  }).format(Number(value)||0);
-
-const today =
-  new Date().toISOString().slice(0,10);
-
-
-/* =========================================================
+/* =========================
    DADOS
-========================================================= */
+========================= */
+
+const STORAGE_KEY = "jvAgenda";
+
+const defaultData = {
+  clients: [
+    {
+      id: 1,
+      name: "Maria Silva",
+      phone: "(11) 99999-1111"
+    },
+    {
+      id: 2,
+      name: "Juliana Costa",
+      phone: "(11) 98888-2222"
+    }
+  ],
+
+  services: [
+    {
+      id: 1,
+      name: "Mão",
+      price: 25
+    },
+    {
+      id: 2,
+      name: "Pé",
+      price: 25
+    },
+    {
+      id: 3,
+      name: "Mão e pé",
+      price: 50
+    }
+  ],
+
+  appointments: [
+    {
+      id: 1,
+      clientId: 1,
+      serviceId: 1,
+      date: today(),
+      time: "09:00",
+      status: "Presente"
+    },
+    {
+      id: 2,
+      clientId: 2,
+      serviceId: 3,
+      date: today(),
+      time: "10:00",
+      status: "Aguardando"
+    }
+  ]
+};
+
 
 let data;
 
-try{
 
-  data =
-    JSON.parse(
-      localStorage.getItem('jvAgenda')
-    );
+/* =========================
+   INICIALIZAÇÃO
+========================= */
 
-}catch(error){
+function loadData(){
 
-  data = null;
+  try{
 
-}
+    const saved = localStorage.getItem(STORAGE_KEY);
 
-if(!data){
+    if(saved){
+      data = JSON.parse(saved);
+    }else{
+      data = defaultData;
+      save();
+    }
 
-  data = {
+  }catch(error){
 
-    clients:[
-      {
-        id:1,
-        name:'Maria Silva',
-        phone:'(11) 98765-4321',
-        email:'',
-        birth:'',
-        notes:''
-      },
+    console.error(error);
 
-      {
-        id:2,
-        name:'Juliana Costa',
-        phone:'(11) 97654-3210',
-        email:'',
-        birth:'',
-        notes:''
-      }
-    ],
-
-    services:[
-      {
-        id:1,
-        name:'Mão',
-        price:25
-      },
-
-      {
-        id:2,
-        name:'Pé',
-        price:25
-      },
-
-      {
-        id:3,
-        name:'Mão e pé',
-        price:50
-      }
-    ],
-
-    appointments:[
-      {
-        id:1,
-        client:1,
-        date:today,
-        time:'09:00',
-        service:1,
-        status:'Presente',
-        price:25
-      },
-
-      {
-        id:2,
-        client:2,
-        date:today,
-        time:'10:00',
-        service:3,
-        status:'Aguardando',
-        price:50
-      }
-    ]
-
-  };
-
-}
-
-
-/* =========================================================
-   SALVAR
-========================================================= */
-
-function save(){
-
-  localStorage.setItem(
-    'jvAgenda',
-    JSON.stringify(data)
-  );
-
-  renderAll();
-
-}
-
-
-/* =========================================================
-   FUNÇÕES AUXILIARES
-========================================================= */
-
-function clientName(id){
-
-  const client =
-    data.clients.find(
-      x => Number(x.id) === Number(id)
-    );
-
-  return client
-    ? client.name
-    : 'Cliente';
-
-}
-
-
-function serviceName(id){
-
-  const service =
-    data.services.find(
-      x => Number(x.id) === Number(id)
-    );
-
-  return service
-    ? service.name
-    : 'Serviço';
-
-}
-
-
-function statusBadge(status){
-
-  let css = 'wait';
-
-  if(status === 'Presente')
-    css = 'ok';
-
-  if(status === 'Falta')
-    css = 'abs';
-
-  if(status === 'Cancelado')
-    css = 'cancel';
-
-  return `
-    <span class="badge ${css}">
-      ${status}
-    </span>
-  `;
-
-}
-
-
-/* =========================================================
-   RENDER GERAL
-========================================================= */
-
-function renderAll(){
-
-  renderHome();
-  renderAgenda();
-  renderClients();
-  renderPresence();
-  renderFinance();
-  renderServices();
-
-}
-
-
-/* =========================================================
-   INÍCIO
-========================================================= */
-
-function renderHome(){
-
-  const appointments =
-    data.appointments.filter(
-      x => x.date === today
-    );
-
-  const present =
-    appointments.filter(
-      x => x.status === 'Presente'
-    );
-
-  const absent =
-    appointments.filter(
-      x => x.status === 'Falta'
-    );
-
-  document.getElementById('sToday').textContent =
-    appointments.length;
-
-  document.getElementById('sPresent').textContent =
-    present.length;
-
-  document.getElementById('sAbsent').textContent =
-    absent.length;
-
-  document.getElementById('sRevenue').textContent =
-    money(
-      present.reduce(
-        (total,x) =>
-          total + Number(x.price || 0),
-        0
-      )
-    );
-
-
-  appointments.sort(
-    (a,b) =>
-      a.time.localeCompare(b.time)
-  );
-
-
-  document.getElementById(
-    'homeAppointments'
-  ).innerHTML = appointments.length
-
-    ? `
-      <table class="table">
-
-        <tr>
-          <th>Horário</th>
-          <th>Cliente</th>
-          <th>Serviço</th>
-          <th>Status</th>
-        </tr>
-
-        ${
-          appointments.map(x => `
-
-            <tr>
-
-              <td>${x.time}</td>
-
-              <td>
-                ${clientName(x.client)}
-              </td>
-
-              <td>
-                ${serviceName(x.service)}
-              </td>
-
-              <td>
-                ${statusBadge(x.status)}
-              </td>
-
-            </tr>
-
-          `).join('')
-        }
-
-      </table>
-    `
-
-    : `
-      <div class="empty">
-        Nenhum atendimento para hoje.
-      </div>
-    `;
-
-}
-
-
-/* =========================================================
-   AGENDA
-========================================================= */
-
-function renderAgenda(){
-
-  const appointments =
-    [...data.appointments].sort(
-      (a,b) =>
-        (a.date+a.time)
-        .localeCompare(b.date+b.time)
-    );
-
-
-  document.getElementById(
-    'agendaList'
-  ).innerHTML = appointments.length
-
-    ? `
-      <table class="table">
-
-        <tr>
-
-          <th>Data</th>
-          <th>Hora</th>
-          <th>Cliente</th>
-          <th>Serviço</th>
-          <th>Valor</th>
-          <th>Status</th>
-          <th></th>
-
-        </tr>
-
-        ${
-          appointments.map(x => `
-
-            <tr>
-
-              <td>
-                ${new Date(
-                  x.date+'T12:00'
-                ).toLocaleDateString('pt-BR')}
-              </td>
-
-              <td>
-                ${x.time}
-              </td>
-
-              <td>
-                ${clientName(x.client)}
-              </td>
-
-              <td>
-                ${serviceName(x.service)}
-              </td>
-
-              <td>
-                ${money(x.price)}
-              </td>
-
-              <td>
-                ${statusBadge(x.status)}
-              </td>
-
-              <td>
-
-                <button
-                  class="btn secondary"
-                  onclick="cycleStatus(${x.id})"
-                >
-                  Status
-                </button>
-
-              </td>
-
-            </tr>
-
-          `).join('')
-        }
-
-      </table>
-    `
-
-    : `
-      <div class="empty">
-        Nenhum atendimento cadastrado.
-      </div>
-    `;
-
-}
-
-
-/* =========================================================
-   CLIENTES
-========================================================= */
-
-function renderClients(){
-
-  const search =
-    document.getElementById(
-      'clientSearch'
-    );
-
-  const query =
-    (search?.value || '')
-    .toLowerCase()
-    .trim();
-
-
-  const clients =
-    data.clients.filter(
-      x =>
-        (x.name + ' ' + x.phone)
-        .toLowerCase()
-        .includes(query)
-    );
-
-
-  document.getElementById(
-    'clientsList'
-  ).innerHTML = clients.length
-
-    ? clients.map(x => {
-
-        const appointments =
-          data.appointments.filter(
-            a =>
-              Number(a.client) === Number(x.id)
-          );
-
-        const present =
-          appointments.filter(
-            a => a.status === 'Presente'
-          ).length;
-
-
-        const initials =
-          x.name
-          .split(' ')
-          .map(n => n[0])
-          .slice(0,2)
-          .join('')
-          .toUpperCase();
-
-
-        return `
-
-          <div class="client">
-
-            <div class="client-left">
-
-              <div class="avatar">
-                ${initials}
-              </div>
-
-              <div>
-
-                <b>
-                  ${x.name}
-                </b>
-
-                <div class="muted">
-
-                  ${x.phone || 'Sem telefone'}
-                  •
-                  ${appointments.length}
-                  atendimentos
-                  •
-                  ${present}
-                  presenças
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <button
-              class="btn secondary"
-              onclick="clientDetails(${x.id})"
-            >
-              Ver ficha
-            </button>
-
-          </div>
-
-        `;
-
-      }).join('')
-
-    : `
-      <div class="empty">
-        Nenhuma cliente encontrada.
-      </div>
-    `;
-
-}
-
-
-/* =========================================================
-   PRESENÇA
-========================================================= */
-
-function renderPresence(){
-
-  const appointments =
-    data.appointments
-    .filter(x => x.date === today)
-    .sort(
-      (a,b) =>
-        a.time.localeCompare(b.time)
-    );
-
-
-  document.getElementById(
-    'presenceList'
-  ).innerHTML = appointments.length
-
-    ? appointments.map(x => `
-
-        <div class="client">
-
-          <div>
-
-            <b>
-              ${x.time}
-              •
-              ${clientName(x.client)}
-            </b>
-
-            <div class="muted">
-
-              ${serviceName(x.service)}
-              •
-              ${money(x.price)}
-
-            </div>
-
-          </div>
-
-
-          <div style="
-            display:flex;
-            gap:6px;
-            flex-wrap:wrap;
-          ">
-
-            <button
-              class="btn secondary"
-              onclick="setStatus(${x.id},'Presente')"
-            >
-              ✓ Presente
-            </button>
-
-            <button
-              class="btn secondary"
-              onclick="setStatus(${x.id},'Falta')"
-            >
-              ✕ Falta
-            </button>
-
-          </div>
-
-        </div>
-
-      `).join('')
-
-    : `
-      <div class="empty">
-        Nenhum atendimento hoje.
-      </div>
-    `;
-
-}
-
-
-/* =========================================================
-   FINANCEIRO
-========================================================= */
-
-function renderFinance(){
-
-  const appointments =
-    data.appointments.filter(
-      x => x.status === 'Presente'
-    );
-
-
-  const revenue =
-    appointments.reduce(
-      (total,x) =>
-        total + Number(x.price || 0),
-      0
-    );
-
-
-  document.getElementById(
-    'fRevenue'
-  ).textContent = money(revenue);
-
-
-  document.getElementById(
-    'fCount'
-  ).textContent = appointments.length;
-
-
-  document.getElementById(
-    'fTicket'
-  ).textContent =
-    money(
-      appointments.length
-      ? revenue / appointments.length
-      : 0
-    );
-
-
-  document.getElementById(
-    'fClients'
-  ).textContent =
-    data.clients.length;
-
-
-  document.getElementById(
-    'financeList'
-  ).innerHTML = appointments.length
-
-    ? `
-      <table class="table">
-
-        <tr>
-
-          <th>Data</th>
-          <th>Cliente</th>
-          <th>Serviço</th>
-          <th>Valor</th>
-
-        </tr>
-
-        ${
-          appointments.map(x => `
-
-            <tr>
-
-              <td>
-                ${new Date(
-                  x.date+'T12:00'
-                ).toLocaleDateString('pt-BR')}
-              </td>
-
-              <td>
-                ${clientName(x.client)}
-              </td>
-
-              <td>
-                ${serviceName(x.service)}
-              </td>
-
-              <td>
-                ${money(x.price)}
-              </td>
-
-            </tr>
-
-          `).join('')
-        }
-
-      </table>
-    `
-
-    : `
-      <div class="empty">
-        Ainda não há atendimentos marcados como presentes.
-      </div>
-    `;
-
-}
-
-
-/* =========================================================
-   SERVIÇOS
-========================================================= */
-
-function renderServices(){
-
-  const container =
-    document.getElementById(
-      'servicesList'
-    );
-
-
-  container.innerHTML =
-    data.services.length
-
-    ? data.services.map(x => `
-
-        <div class="client">
-
-          <div>
-
-            <b>
-              ${x.name}
-            </b>
-
-            <div class="muted">
-              Serviço de manicure/pedicure
-            </div>
-
-          </div>
-
-          <b>
-            ${money(x.price)}
-          </b>
-
-        </div>
-
-      `).join('')
-
-    : `
-      <div class="empty">
-        Nenhum serviço cadastrado.
-      </div>
-    `;
-
-}
-
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-function setStatus(id,status){
-
-  const appointment =
-    data.appointments.find(
-      x => Number(x.id) === Number(id)
-    );
-
-
-  if(appointment){
-
-    appointment.status = status;
-
+    data = defaultData;
     save();
 
   }
@@ -1529,510 +716,396 @@ function setStatus(id,status){
 }
 
 
-function cycleStatus(id){
-
-  const appointment =
-    data.appointments.find(
-      x => Number(x.id) === Number(id)
-    );
+function save(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
 
 
-  if(!appointment)
-    return;
+/* =========================
+   DATA
+========================= */
 
+function today(){
 
-  const sequence = [
-    'Aguardando',
-    'Presente',
-    'Falta',
-    'Cancelado'
-  ];
+  const d = new Date();
 
-
-  const current =
-    sequence.indexOf(
-      appointment.status
-    );
-
-
-  appointment.status =
-    sequence[
-      (current + 1) % sequence.length
-    ];
-
-
-  save();
+  return d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0") + "-" +
+    String(d.getDate()).padStart(2,"0");
 
 }
 
 
-/* =========================================================
-   MODAL
-========================================================= */
+function formatDate(date){
 
-function openModal(type){
+  if(!date) return "";
 
-  const modal =
-    document.getElementById('modal');
+  const parts = date.split("-");
 
-  const title =
-    document.getElementById('modalTitle');
-
-  const body =
-    document.getElementById('modalBody');
-
-
-  modal.classList.add('show');
-
-
-  if(type === 'client'){
-
-    title.textContent =
-      'Nova cliente';
-
-
-    body.innerHTML = `
-
-      <div class="form">
-
-        <div class="full">
-
-          <label>
-            Nome
-          </label>
-
-          <input
-            id="mName"
-            type="text"
-            placeholder="Nome da cliente"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Telefone / WhatsApp
-          </label>
-
-          <input
-            id="mPhone"
-            type="tel"
-            placeholder="(00) 00000-0000"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Data de nascimento
-          </label>
-
-          <input
-            id="mBirth"
-            type="date"
-          >
-
-        </div>
-
-
-        <div class="full">
-
-          <label>
-            E-mail
-          </label>
-
-          <input
-            id="mEmail"
-            type="email"
-          >
-
-        </div>
-
-
-        <div class="full">
-
-          <label>
-            Observações
-          </label>
-
-          <textarea
-            id="mNotes"
-            rows="3"
-          ></textarea>
-
-        </div>
-
-      </div>
-
-
-      <div class="actions">
-
-        <button
-          class="btn"
-          onclick="addClient()"
-        >
-          Salvar cliente
-        </button>
-
-      </div>
-
-    `;
-
-  }
-
-
-  if(type === 'service'){
-
-    title.textContent =
-      'Novo serviço';
-
-
-    body.innerHTML = `
-
-      <div class="form">
-
-        <div class="full">
-
-          <label>
-            Nome do serviço
-          </label>
-
-          <input
-            id="mService"
-            type="text"
-            placeholder="Ex.: Alongamento"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Preço
-          </label>
-
-          <input
-            id="mPrice"
-            type="number"
-            step="0.01"
-            min="0"
-            placeholder="0,00"
-          >
-
-        </div>
-
-      </div>
-
-
-      <div class="actions">
-
-        <button
-          class="btn"
-          onclick="addService()"
-        >
-          Salvar serviço
-        </button>
-
-      </div>
-
-    `;
-
-  }
-
-
-  if(type === 'appointment'){
-
-    title.textContent =
-      'Novo atendimento';
-
-
-    body.innerHTML = `
-
-      <div class="form">
-
-        <div class="full">
-
-          <label>
-            Cliente
-          </label>
-
-          <select id="mClient">
-
-            ${
-              data.clients.map(c => `
-
-                <option value="${c.id}">
-                  ${c.name}
-                </option>
-
-              `).join('')
-            }
-
-          </select>
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Data
-          </label>
-
-          <input
-            id="mDate"
-            type="date"
-            value="${today}"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Horário
-          </label>
-
-          <input
-            id="mTime"
-            type="time"
-            value="09:00"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Serviço
-          </label>
-
-          <select id="mSvc">
-
-            ${
-              data.services.map(s => `
-
-                <option value="${s.id}">
-                  ${s.name} — ${money(s.price)}
-                </option>
-
-              `).join('')
-            }
-
-          </select>
-
-        </div>
-
-
-        <div>
-
-          <label>
-            Valor
-          </label>
-
-          <input
-            id="mApPrice"
-            type="number"
-            step="0.01"
-            min="0"
-          >
-
-        </div>
-
-
-        <div class="full">
-
-          <label>
-            Observações
-          </label>
-
-          <textarea
-            id="mObs"
-            rows="2"
-          ></textarea>
-
-        </div>
-
-      </div>
-
-
-      <div class="actions">
-
-        <button
-          class="btn"
-          onclick="addAppointment()"
-        >
-          Salvar atendimento
-        </button>
-
-      </div>
-
-    `;
-
-
-    const serviceSelect =
-      document.getElementById('mSvc');
-
-    const priceInput =
-      document.getElementById('mApPrice');
-
-
-    function updatePrice(){
-
-      const service =
-        data.services.find(
-          s =>
-            Number(s.id) ===
-            Number(serviceSelect.value)
-        );
-
-
-      if(service){
-
-        priceInput.value =
-          service.price;
-
-      }
-
-    }
-
-
-    serviceSelect.addEventListener(
-      'change',
-      updatePrice
-    );
-
-
-    updatePrice();
-
-  }
+  return parts[2] + "/" + parts[1] + "/" + parts[0];
 
 }
 
 
-/* =========================================================
-   FECHAR MODAL
-========================================================= */
+function money(value){
 
-function closeModal(){
-
-  document
-    .getElementById('modal')
-    .classList.remove('show');
-
-}
-
-
-/* Fechar clicando fora */
-document
-  .getElementById('modal')
-  .addEventListener(
-    'click',
-    function(event){
-
-      if(event.target === this){
-
-        closeModal();
-
-      }
-
+  return Number(value || 0).toLocaleString(
+    "pt-BR",
+    {
+      style:"currency",
+      currency:"BRL"
     }
   );
 
+}
 
-/* =========================================================
-   ADICIONAR CLIENTE
-========================================================= */
+
+/* =========================
+   BUSCAR DADOS
+========================= */
+
+function getClient(id){
+
+  return data.clients.find(c => Number(c.id) === Number(id));
+
+}
+
+
+function getService(id){
+
+  return data.services.find(s => Number(s.id) === Number(id));
+
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+document.querySelectorAll(".nav button").forEach(button => {
+
+  button.addEventListener("click", function(){
+
+    const page = this.dataset.page;
+
+    document.querySelectorAll(".nav button")
+      .forEach(item => item.classList.remove("active"));
+
+    this.classList.add("active");
+
+    document.querySelectorAll(".page")
+      .forEach(section => section.classList.add("hidden"));
+
+    const selected = document.getElementById(page);
+
+    if(selected){
+      selected.classList.remove("hidden");
+    }
+
+    renderAll();
+
+  });
+
+});
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(type){
+
+  const modal = document.getElementById("modal");
+  const title = document.getElementById("modalTitle");
+  const content = document.getElementById("modalContent");
+
+  modal.classList.add("show");
+
+  if(type === "client"){
+
+    title.textContent = "Novo cliente";
+
+    content.innerHTML = `
+
+      <div class="form-group">
+        <label>Nome</label>
+        <input id="clientName" placeholder="Nome da cliente">
+      </div>
+
+      <div class="form-group">
+        <label>Telefone</label>
+        <input id="clientPhone" placeholder="Telefone">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal()">
+          Cancelar
+        </button>
+
+        <button class="btn" onclick="addClient()">
+          Salvar
+        </button>
+      </div>
+
+    `;
+
+  }
+
+
+  if(type === "service"){
+
+    title.textContent = "Novo serviço";
+
+    content.innerHTML = `
+
+      <div class="form-group">
+        <label>Nome do serviço</label>
+        <input id="serviceName" placeholder="Ex.: Alongamento">
+      </div>
+
+      <div class="form-group">
+        <label>Valor</label>
+        <input id="servicePrice" type="number" step="0.01" placeholder="0,00">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal()">
+          Cancelar
+        </button>
+
+        <button class="btn" onclick="addService()">
+          Salvar
+        </button>
+      </div>
+
+    `;
+
+  }
+
+
+  if(type === "appointment"){
+
+    title.textContent = "Novo agendamento";
+
+    let clientOptions = data.clients.map(client => {
+
+      return `
+        <option value="${client.id}">
+          ${escapeHtml(client.name)}
+        </option>
+      `;
+
+    }).join("");
+
+    let serviceOptions = data.services.map(service => {
+
+      return `
+        <option value="${service.id}">
+          ${escapeHtml(service.name)} - ${money(service.price)}
+        </option>
+      `;
+
+    }).join("");
+
+
+    if(!data.clients.length || !data.services.length){
+
+      content.innerHTML = `
+
+        <p style="margin-bottom:20px">
+          Para criar um agendamento, cadastre pelo menos
+          um cliente e um serviço.
+        </p>
+
+        <div class="modal-actions">
+          <button class="btn" onclick="closeModal()">
+            Fechar
+          </button>
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    content.innerHTML = `
+
+      <div class="form-group">
+        <label>Cliente</label>
+
+        <select id="appointmentClient">
+          ${clientOptions}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Serviço</label>
+
+        <select id="appointmentService">
+          ${serviceOptions}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Data</label>
+        <input id="appointmentDate" type="date" value="${today()}">
+      </div>
+
+      <div class="form-group">
+        <label>Horário</label>
+        <input id="appointmentTime" type="time">
+      </div>
+
+      <div class="modal-actions">
+
+        <button class="btn btn-secondary" onclick="closeModal()">
+          Cancelar
+        </button>
+
+        <button class="btn" onclick="addAppointment()">
+          Agendar
+        </button>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+function closeModal(){
+
+  document.getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+document.getElementById("modal").addEventListener("click", function(event){
+
+  if(event.target === this){
+    closeModal();
+  }
+
+});
+
+
+/* =========================
+   CLIENTES
+========================= */
 
 function addClient(){
 
-  const name =
-    document
-      .getElementById('mName')
-      .value
-      .trim();
-
+  const name = document.getElementById("clientName").value.trim();
+  const phone = document.getElementById("clientPhone").value.trim();
 
   if(!name){
 
-    alert(
-      'Informe o nome da cliente.'
-    );
+    alert("Digite o nome da cliente.");
 
     return;
 
   }
 
-
   data.clients.push({
 
-    id:Date.now(),
+    id: Date.now(),
 
     name:name,
 
-    phone:
-      document.getElementById(
-        'mPhone'
-      ).value.trim(),
-
-    birth:
-      document.getElementById(
-        'mBirth'
-      ).value,
-
-    email:
-      document.getElementById(
-        'mEmail'
-      ).value.trim(),
-
-    notes:
-      document.getElementById(
-        'mNotes'
-      ).value.trim()
+    phone:phone
 
   });
 
+  save();
 
   closeModal();
 
-  save();
+  renderAll();
 
 }
 
 
-/* =========================================================
-   ADICIONAR SERVIÇO
-========================================================= */
+function deleteClient(id){
+
+  const client = getClient(id);
+
+  if(!client) return;
+
+
+  const confirmed = confirm(
+    `Excluir a cliente "${client.name}"?\n\n` +
+    `Os agendamentos dessa cliente também serão excluídos.`
+  );
+
+
+  if(!confirmed) return;
+
+
+  data.clients = data.clients.filter(
+    client => Number(client.id) !== Number(id)
+  );
+
+
+  data.appointments = data.appointments.filter(
+    appointment => Number(appointment.clientId) !== Number(id)
+  );
+
+
+  save();
+
+  renderAll();
+
+  alert("Cliente excluída com sucesso.");
+
+}
+
+
+function clientDetails(id){
+
+  const client = getClient(id);
+
+  if(!client) return;
+
+  const appointments = data.appointments.filter(
+    a => Number(a.clientId) === Number(id)
+  );
+
+
+  let text = `Cliente: ${client.name}\n`;
+
+  if(client.phone){
+    text += `Telefone: ${client.phone}\n`;
+  }
+
+  text += `\nAgendamentos: ${appointments.length}`;
+
+  alert(text);
+
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
 
 function addService(){
 
-  const name =
-    document
-      .getElementById('mService')
-      .value
-      .trim();
+  const name = document.getElementById("serviceName")
+    .value.trim();
 
-
-  const price =
-    Number(
-      document.getElementById(
-        'mPrice'
-      ).value
-    );
+  const price = Number(
+    document.getElementById("servicePrice").value
+  );
 
 
   if(!name){
 
-    alert(
-      'Informe o nome do serviço.'
-    );
+    alert("Digite o nome do serviço.");
 
     return;
 
@@ -2041,7 +1114,7 @@ function addService(){
 
   data.services.push({
 
-    id:Date.now(),
+    id: Date.now(),
 
     name:name,
 
@@ -2050,93 +1123,37 @@ function addService(){
   });
 
 
+  save();
+
   closeModal();
 
-  save();
+  renderAll();
 
 }
 
 
-/* =========================================================
-   ADICIONAR ATENDIMENTO
-========================================================= */
+/* =========================
+   AGENDAMENTOS
+========================= */
 
 function addAppointment(){
 
-  const client =
-    Number(
-      document.getElementById(
-        'mClient'
-      ).value
-    );
+  const clientId =
+    Number(document.getElementById("appointmentClient").value);
 
+  const serviceId =
+    Number(document.getElementById("appointmentService").value);
 
   const date =
-    document.getElementById(
-      'mDate'
-    ).value;
-
+    document.getElementById("appointmentDate").value;
 
   const time =
-    document.getElementById(
-      'mTime'
-    ).value;
+    document.getElementById("appointmentTime").value;
 
 
-  const service =
-    Number(
-      document.getElementById(
-        'mSvc'
-      ).value
-    );
+  if(!date || !time){
 
-
-  const price =
-    Number(
-      document.getElementById(
-        'mApPrice'
-      ).value
-    );
-
-
-  if(!client){
-
-    alert(
-      'Selecione uma cliente.'
-    );
-
-    return;
-
-  }
-
-
-  if(!date){
-
-    alert(
-      'Informe a data.'
-    );
-
-    return;
-
-  }
-
-
-  if(!time){
-
-    alert(
-      'Informe o horário.'
-    );
-
-    return;
-
-  }
-
-
-  if(!service){
-
-    alert(
-      'Selecione um serviço.'
-    );
+    alert("Informe a data e o horário.");
 
     return;
 
@@ -2147,205 +1164,692 @@ function addAppointment(){
 
     id:Date.now(),
 
-    client:client,
+    clientId:clientId,
+
+    serviceId:serviceId,
 
     date:date,
 
     time:time,
 
-    service:service,
-
-    status:'Aguardando',
-
-    price:price || 0
+    status:"Aguardando"
 
   });
 
-
-  closeModal();
 
   save();
 
+  closeModal();
+
+  renderAll();
+
 }
 
 
-/* =========================================================
-   FICHA DA CLIENTE
-========================================================= */
+/* =========================
+   CANCELAR AGENDAMENTO
+========================= */
 
-function clientDetails(id){
+function cancelAppointment(id){
 
-  const client =
-    data.clients.find(
-      x =>
-        Number(x.id) ===
-        Number(id)
-    );
+  const appointment = data.appointments.find(
+    a => Number(a.id) === Number(id)
+  );
 
 
-  if(!client)
+  if(!appointment) return;
+
+
+  if(appointment.status === "Cancelado"){
+
+    alert("Este agendamento já está cancelado.");
+
     return;
 
+  }
 
-  const appointments =
-    data.appointments.filter(
-      x =>
-        Number(x.client) ===
-        Number(id)
-    );
+
+  const client = getClient(appointment.clientId);
+
+
+  const confirmed = confirm(
+
+    `Cancelar o agendamento de ${client ? client.name : "cliente"}?\n\n` +
+
+    `Data: ${formatDate(appointment.date)}\n` +
+
+    `Horário: ${appointment.time}\n\n` +
+
+    `O agendamento continuará no histórico como CANCELADO.`
+
+  );
+
+
+  if(!confirmed) return;
+
+
+  appointment.status = "Cancelado";
+
+  save();
+
+  renderAll();
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+function setStatus(id, status){
+
+  const appointment = data.appointments.find(
+    a => Number(a.id) === Number(id)
+  );
+
+
+  if(!appointment) return;
+
+
+  if(appointment.status === "Cancelado"){
+    return;
+  }
+
+
+  appointment.status = status;
+
+  save();
+
+  renderAll();
+
+}
+
+
+function cycleStatus(id){
+
+  const appointment = data.appointments.find(
+    a => Number(a.id) === Number(id)
+  );
+
+
+  if(!appointment || appointment.status === "Cancelado"){
+    return;
+  }
+
+
+  const statuses = [
+    "Aguardando",
+    "Presente",
+    "Falta"
+  ];
+
+
+  const currentIndex =
+    statuses.indexOf(appointment.status);
+
+
+  const nextIndex =
+    (currentIndex + 1) % statuses.length;
+
+
+  appointment.status = statuses[nextIndex];
+
+  save();
+
+  renderAll();
+
+}
+
+
+/* =========================
+   RENDERIZAÇÃO
+========================= */
+
+function renderAll(){
+
+  renderHome();
+
+  renderAgenda();
+
+  renderClients();
+
+  renderPresence();
+
+  renderFinance();
+
+  renderServices();
+
+}
+
+
+/* =========================
+   INÍCIO
+========================= */
+
+function renderHome(){
+
+  const todayAppointments =
+    data.appointments.filter(a => a.date === today());
 
 
   const present =
-    appointments.filter(
-      x =>
-        x.status === 'Presente'
-    ).length;
+    todayAppointments.filter(a => a.status === "Presente");
 
 
   const absent =
-    appointments.filter(
-      x =>
-        x.status === 'Falta'
-    ).length;
+    todayAppointments.filter(a => a.status === "Falta");
 
 
-  const frequency =
-    appointments.length
-    ? Math.round(
-        present /
-        appointments.length *
-        100
-      )
-    : 0;
+  const revenue =
+    present.reduce((total, appointment) => {
+
+      const service = getService(appointment.serviceId);
+
+      return total + (service ? Number(service.price) : 0);
+
+    },0);
 
 
-  alert(
+  document.getElementById("homeToday").textContent =
+    todayAppointments.length;
 
-    client.name +
 
-    '\n\n' +
+  document.getElementById("homePresent").textContent =
+    present.length;
 
-    'Telefone: ' +
-    (client.phone || 'Não informado') +
 
-    '\n\n' +
+  document.getElementById("homeAbsent").textContent =
+    absent.length;
 
-    'Atendimentos: ' +
-    appointments.length +
 
-    '\n' +
+  document.getElementById("homeRevenue").textContent =
+    money(revenue);
 
-    'Presenças: ' +
-    present +
 
-    '\n' +
+  const container =
+    document.getElementById("homeAppointments");
 
-    'Faltas: ' +
-    absent +
 
-    '\n' +
+  if(!todayAppointments.length){
 
-    'Frequência: ' +
-    frequency +
-    '%'
+    container.innerHTML =
+      `<p style="color:#8a7566">Nenhum atendimento hoje.</p>`;
 
-  );
+    return;
+
+  }
+
+
+  container.innerHTML =
+    todayAppointments
+      .sort((a,b) => a.time.localeCompare(b.time))
+      .map(appointmentHtml)
+      .join("");
 
 }
 
 
-/* =========================================================
-   BUSCA DE CLIENTES
-========================================================= */
+/* =========================
+   AGENDA
+========================= */
 
-document
-  .getElementById('clientSearch')
-  .addEventListener(
-    'input',
-    renderClients
-  );
+function renderAgenda(){
+
+  const container =
+    document.getElementById("agendaList");
 
 
-/* =========================================================
-   NAVEGAÇÃO
-========================================================= */
+  const appointments =
+    [...data.appointments].sort((a,b) => {
 
-document
-  .querySelectorAll('.nav button')
-  .forEach(button => {
+      const dateA = a.date + " " + a.time;
+      const dateB = b.date + " " + b.time;
 
-    button.addEventListener(
-      'click',
-      function(){
+      return dateA.localeCompare(dateB);
 
-        const page =
-          this.dataset.page;
+    });
 
 
-        /* Remove ativo */
+  if(!appointments.length){
 
-        document
-          .querySelectorAll(
-            '.nav button'
-          )
-          .forEach(item =>
-            item.classList.remove(
-              'active'
-            )
-          );
+    container.innerHTML =
+      `<p style="color:#8a7566">Nenhum agendamento.</p>`;
+
+    return;
+
+  }
 
 
-        /* Ativa botão atual */
+  container.innerHTML =
+    appointments.map(appointmentHtml).join("");
 
-        this.classList.add(
-          'active'
-        );
-
-
-        /* Esconde todas as páginas */
-
-        document
-          .querySelectorAll(
-            '.page'
-          )
-          .forEach(section =>
-            section.classList.add(
-              'hidden'
-            )
-          );
+}
 
 
-        /* Mostra a página selecionada */
+/* =========================
+   HTML AGENDAMENTO
+========================= */
 
-        const selected =
-          document.getElementById(
-            page
-          );
+function appointmentHtml(appointment){
 
+  const client = getClient(appointment.clientId);
 
-        if(selected){
-
-          selected.classList.remove(
-            'hidden'
-          );
-
-        }
+  const service = getService(appointment.serviceId);
 
 
-        /* Atualiza dados */
+  const clientName =
+    client ? escapeHtml(client.name) : "Cliente removida";
 
-        renderAll();
 
-      }
+  const serviceName =
+    service ? escapeHtml(service.name) : "Serviço removido";
 
+
+  let actions = "";
+
+
+  if(appointment.status !== "Cancelado"){
+
+    actions = `
+
+      <button
+        class="btn-success"
+        onclick="setStatus(${appointment.id}, 'Presente')">
+        Presente
+      </button>
+
+      <button
+        class="btn-secondary"
+        onclick="setStatus(${appointment.id}, 'Falta')">
+        Falta
+      </button>
+
+      <button
+        class="btn-cancel"
+        onclick="cancelAppointment(${appointment.id})">
+        Cancelar
+      </button>
+
+    `;
+
+  }
+
+
+  return `
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <strong>
+          ${appointment.time} • ${clientName}
+        </strong>
+
+        <span>
+          ${formatDate(appointment.date)} • ${serviceName}
+        </span>
+
+        <div style="margin-top:7px">
+
+          <span class="status status-${appointment.status}">
+            ${appointment.status}
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="actions">
+
+        ${actions}
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   CLIENTES
+========================= */
+
+function renderClients(){
+
+  const container =
+    document.getElementById("clientsList");
+
+
+  const search =
+    document.getElementById("clientSearch")
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const clients =
+    data.clients.filter(client => {
+
+      return client.name
+        .toLowerCase()
+        .includes(search);
+
+    });
+
+
+  if(!clients.length){
+
+    container.innerHTML =
+      `<p style="color:#8a7566">Nenhuma cliente encontrada.</p>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    clients.map(client => `
+
+      <div class="item">
+
+        <div class="item-info">
+
+          <strong>
+            ${escapeHtml(client.name)}
+          </strong>
+
+          <span>
+            ${escapeHtml(client.phone || "Telefone não informado")}
+          </span>
+
+        </div>
+
+        <div class="actions">
+
+          <button
+            class="btn-secondary"
+            onclick="clientDetails(${client.id})">
+            Ver ficha
+          </button>
+
+          <button
+            class="btn-delete"
+            onclick="deleteClient(${client.id})">
+            Excluir
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* =========================
+   PRESENÇA
+========================= */
+
+function renderPresence(){
+
+  const container =
+    document.getElementById("presenceList");
+
+
+  const appointments =
+    data.appointments
+      .filter(a => a.status !== "Cancelado")
+      .sort((a,b) => {
+
+        return (a.date + a.time)
+          .localeCompare(b.date + b.time);
+
+      });
+
+
+  if(!appointments.length){
+
+    container.innerHTML =
+      `<p style="color:#8a7566">
+        Nenhum atendimento pendente de controle.
+      </p>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    appointments.map(appointment => {
+
+      const client =
+        getClient(appointment.clientId);
+
+      const service =
+        getService(appointment.serviceId);
+
+
+      return `
+
+        <div class="item">
+
+          <div class="item-info">
+
+            <strong>
+              ${formatDate(appointment.date)}
+              às ${appointment.time}
+            </strong>
+
+            <span>
+              ${client ? escapeHtml(client.name) : "Cliente removida"}
+              •
+              ${service ? escapeHtml(service.name) : "Serviço removido"}
+            </span>
+
+          </div>
+
+          <div class="actions">
+
+            <button
+              class="btn-success"
+              onclick="setStatus(${appointment.id}, 'Presente')">
+              Presente
+            </button>
+
+            <button
+              class="btn-secondary"
+              onclick="setStatus(${appointment.id}, 'Falta')">
+              Falta
+            </button>
+
+            <button
+              class="btn-cancel"
+              onclick="cancelAppointment(${appointment.id})">
+              Cancelar
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* =========================
+   FINANCEIRO
+========================= */
+
+function renderFinance(){
+
+  const present =
+    data.appointments.filter(
+      a => a.status === "Presente"
     );
 
-  });
+
+  const revenue =
+    present.reduce((total, appointment) => {
+
+      const service =
+        getService(appointment.serviceId);
+
+      return total +
+        (service ? Number(service.price) : 0);
+
+    },0);
 
 
-/* =========================================================
-   INICIALIZAÇÃO
-========================================================= */
+  document.getElementById("financeCount")
+    .textContent = present.length;
+
+
+  document.getElementById("financeRevenue")
+    .textContent = money(revenue);
+
+
+  const container =
+    document.getElementById("financeList");
+
+
+  if(!present.length){
+
+    container.innerHTML =
+      `<p style="color:#8a7566">
+        Nenhum atendimento realizado.
+      </p>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    present.map(appointment => {
+
+      const client =
+        getClient(appointment.clientId);
+
+      const service =
+        getService(appointment.serviceId);
+
+
+      return `
+
+        <div class="item">
+
+          <div class="item-info">
+
+            <strong>
+              ${client ? escapeHtml(client.name) : "Cliente removida"}
+            </strong>
+
+            <span>
+              ${formatDate(appointment.date)}
+              •
+              ${appointment.time}
+              •
+              ${service ? escapeHtml(service.name) : "Serviço removido"}
+            </span>
+
+          </div>
+
+          <strong>
+            ${money(service ? service.price : 0)}
+          </strong>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+function renderServices(){
+
+  const container =
+    document.getElementById("servicesList");
+
+
+  if(!data.services.length){
+
+    container.innerHTML =
+      `<p style="color:#8a7566">Nenhum serviço cadastrado.</p>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    data.services.map(service => `
+
+      <div class="item">
+
+        <div class="item-info">
+
+          <strong>
+            ${escapeHtml(service.name)}
+          </strong>
+
+          <span>
+            Serviço
+          </span>
+
+        </div>
+
+        <strong>
+          ${money(service.price)}
+        </strong>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* =========================
+   SEGURANÇA
+========================= */
+
+function escapeHtml(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+   BUSCA CLIENTE
+========================= */
+
+document.getElementById("clientSearch")
+  .addEventListener("input", renderClients);
+
+
+/* =========================
+   INICIAR
+========================= */
+
+loadData();
 
 renderAll();
 
@@ -2353,4 +1857,3 @@ renderAll();
 
 </body>
 </html>
-```
